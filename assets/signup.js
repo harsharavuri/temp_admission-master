@@ -129,6 +129,40 @@ $("#register_payment_info").submit(function(e) {
     return false;
 });
 
+$(document).ready(
+	function(){if($('#signup-inputAdmissionQuota').find(':selected').val()=='JEE'){
+		
+		$('#formMainsRank').css('display','block');
+		$('#formSatScore').css('display','none');
+		$('#signup-inputMainsRank').attr('required',true);
+		$('#signup-inputSatScore').attr('required',false);
+	}else{
+		$('#formMainsRank').css('display','none');
+		$('#formSatScore').css('display','block');
+		$('#signup-inputMainsRank').attr('required',false);
+		$('#signup-inputSatScore').attr('required',true);
+	}
+	}
+);
+
+$('#signup-inputAdmissionQuota').change(function(){
+	
+	if($('#signup-inputAdmissionQuota').find(':selected').val()=='JEE'){
+		
+		$('#formMainsRank').css('display','block');
+		$('#formSatScore').css('display','none');
+		$('#signup-inputMainsRank').attr('required',true);
+		$('#signup-inputSatScore').attr('required',false);
+
+		}else{
+		$('#formMainsRank').css('display','none');
+		$('#formSatScore').css('display','block');
+		$('#signup-inputMainsRank').attr('required',false);
+		$('#signup-inputSatScore').attr('required',true);
+	}
+	
+});
+
 function register_success(url){
 	console.log(url);
 	window.location.replace(url);

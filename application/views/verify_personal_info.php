@@ -1,77 +1,81 @@
 
 	
 <?php ?>
-	<div class="verify_div  col-sm-12 col-lg-6 col-md-8" id="verify_columns">
-            <div class="verify_text_block">
-			<p class="verify_text">Student ID</p><p class="verify_text"><?php echo $StudentID ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">First Name</p><p class="verify_text"><?php echo $FirstName ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Middle Name</p><p class="verify_text"><?php echo $MiddleName ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Last Name</p><p class="verify_text"><?php echo $LastName ?> </p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Full Name</p><p class="verify_text"><?php echo $FullName ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Father Name</p><p class="verify_text"><?php echo $FatherName ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Mother Name</p><p class="verify_text"><?php echo $MotherName ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Student Email</p><p class="verify_text"><?php echo $StudentEmail ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Parent Email</p><p class="verify_text"><?php echo $ParentEmail ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Address</p><p class="verify_text"><?php echo $Address ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Disability</p><p class="verify_text"><?php echo $Disability ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Height</p><p class="verify_text"><?php echo $Height ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Weight</p><p class="verify_text"><?php echo $Weight ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Identification Marks</p><p class="verify_text"><?php echo $IdentificationMarks ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Student Mobile</p><p class="verify_text"><?php echo $StudentMobile ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Parent Mobile</p><p class="verify_text"><?php echo $ParentMobile ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Father Occupation</p><p class="verify_text"><?php echo $FatherOccupation ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Mother Occupation</p><p class="verify_text"><?php echo $MotherOccupation ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Disability Type</p><p class="verify_text"><?php echo $DisabilityType ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Gender</p><p class="verify_text"><?php echo $Gender ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Caste</p><p class="verify_text"><?php echo $Caste ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Country</p><p class="verify_text"><?php echo $Country ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Birth Date</p><p class="verify_text"><?php echo $BirthDate ?>	</p>
-			</div>
-	</div>
+		<div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong id="status">Error:</strong>
+        </div>
+	<table class="verify_div table table-striped" id="verify_columns">
+            <tr>
+			<td><span class="verify_text_table">Student ID</span></td><td><span class="verify_text_table"><?php echo $StudentID ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">First Name</span></td><td><span class="verify_text_table"><?php echo $FirstName ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Middle Name</span></td><td><span class="verify_text_table"><?php echo $MiddleName ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Last Name</span></td><td><span class="verify_text_table"><?php echo $LastName ?> </span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Full Name</span></td><td><span class="verify_text_table"><?php echo $FullName ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Father Name</span></td><td><span class="verify_text_table"><?php echo $FatherName ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Mother Name</span></td><td><span class="verify_text_table"><?php echo $MotherName ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Student Email</span></td><td><span class="verify_text_table"><?php echo $StudentEmail ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Parent Email</span></td><td><span class="verify_text_table"><?php echo $ParentEmail ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Address</span></td><td><span class="verify_text_table"><?php echo $Address ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Disability</span></td><td><span class="verify_text_table"><?php echo $Disability ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Height</span></td><td><span class="verify_text_table"><?php echo $Height ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Weight</span></td><td><span class="verify_text_table"><?php echo $Weight ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Identification Marks</span></td><td><span class="verify_text_table"><?php echo $IdentificationMarks ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Student Mobile</span></td><td><span class="verify_text_table"><?php echo $StudentMobile ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Parent Mobile</span></td><td><span class="verify_text_table"><?php echo $ParentMobile ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Father Occupation</span></td><td><span class="verify_text_table"><?php echo $FatherOccupation ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Mother Occupation</span></td><td><span class="verify_text_table"><?php echo $MotherOccupation ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Disability Type</span></td><td><span class="verify_text_table"><?php echo $DisabilityType ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Gender</span></td><td><span class="verify_text_table"><?php echo $Gender ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Caste</span></td><td><span class="verify_text_table"><?php echo $Caste ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Country</span></td><td><span class="verify_text_table"><?php echo $Country ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Birth Date</span></td><td><span class="verify_text_table"><?php echo $BirthDate ?>	</span></td>
+			</tr>
+	</table>
 			
 				
 			<form action="http://localhost/temp_admission-master/registration/" method="post">

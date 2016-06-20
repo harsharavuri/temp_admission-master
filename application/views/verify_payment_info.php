@@ -5,27 +5,27 @@
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <strong id="status">Error:</strong>
         </div>
-	<div class="verify_div  col-sm-12 col-lg-6 col-md-8" id="verify_columns">
-            <div class="verify_text_block">
-			<p class="verify_text">Student ID</p><p class="verify_text"><?php echo $StudentID ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Payment Mode</p><p class="verify_text"><?php echo $PaymentMode ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Amount</p><p class="verify_text"><?php echo $Amount ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">DD/UTR Number</p><p class="verify_text"><?php echo $DDUTRNumber ?> </p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Student Account Number</p><p class="verify_text"><?php echo $StudentAccNumber ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Hosteler/DS</p><p class="verify_text"><?php echo $HostelerDS ?></p>
-			</div>
+	<table class="verify_div table table-striped" id="verify_columns">
+            <tr>
+			<td><span class="verify_text_table">Student ID</span></td><td><span class="verify_text_table"><?php echo $StudentID ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Payment Mode</span></td><td><span class="verify_text_table"><?php echo $PaymentMode ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Amount</span></td><td><span class="verify_text_table"><?php echo $Amount ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">DD/UTR Number</span></td><td><span class="verify_text_table"><?php echo $DDUTRNumber ?> </span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Student Account Number</span></td><td><span class="verify_text_table"><?php echo $StudentAccNumber ?></span></td>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Hosteler/DS</span></td><td><span class="verify_text_table"><?php echo $HostelerDS ?></span></td>
+			</tr>
 			
-	</div>
+	</table>
 			
 				
 			<form action="http://localhost/temp_admission-master/registration/payment_info" method="post">

@@ -1,50 +1,56 @@
-<div class="verify_div  col-sm-12 col-lg-6 col-md-8" id="verify_columns">
-            <div class="verify_text_block">
-			<p class="verify_text">Student ID</p><p class="verify_text"><?php echo $StudentID ?></p>
+<table class="verify_div table table-striped" id="verify_columns">
+			<div class="alert alert-danger">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<strong id="status">Error:</strong>
 			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Registration Number</p><p class="verify_text"><?php echo $RegNo ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Roll Number</p><p class="verify_text"><?php echo $RollNo ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Section</p><p class="verify_text"><?php echo $Section ?> </p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Admission Quota</p><p class="verify_text"><?php echo $AdmissionQuota ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Mains Rank</p><p class="verify_text"><?php echo $MainsRank ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Sat Score</p><p class="verify_text"><?php echo $SatScore ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Year Of Admission</p><p class="verify_text"><?php echo $YearOfAdmission ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Year of Study</p><p class="verify_text"><?php echo $YearOfStudy ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Admission Batch</p><p class="verify_text"><?php echo $AdmissionBatch ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Semester</p><p class="verify_text"><?php echo $Semester ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Status</p><p class="verify_text"><?php echo $Status ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Class 10 Percentage</p><p class="verify_text"><?php echo $Class10Percentage ?></p>
-			</div>
-			<div class="verify_text_block">
-			<p class="verify_text">Class 12 Percentage</p><p class="verify_text"><?php echo $Class12Percentage ?></p>
-			</div>
-	</div>
+            <tbody>
+			<tr>
+			<td><span class="verify_text_table">Student ID</span><td><span class="verify_text_table"><?php echo $StudentID ?></span>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Registration Number</span><td><span class="verify_text_table"><?php echo $RegNo ?></span>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Roll Number</span><td><span class="verify_text_table"><?php echo $RollNo ?></span>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Section</span><td><span class="verify_text_table"><?php echo $Section ?> </span>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Admission Quota</span><td><span class="verify_text_table"><?php echo $AdmissionQuota ?></span>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Mains Rank</span><td><span class="verify_text_table"><?php echo $MainsRank ?></span>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Sat Score</span><td><span class="verify_text_table"><?php echo $SatScore ?></span>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Year Of Admission</span><td><span class="verify_text_table"><?php echo $YearOfAdmission ?></span>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Year of Study</span><td><span class="verify_text_table"><?php echo $YearOfStudy ?></span>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Admission Batch</span><td><span class="verify_text_table"><?php echo $AdmissionBatch ?></span>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Semester</span><td><span class="verify_text_table"><?php echo $Semester ?></span>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Status</span><td><span class="verify_text_table"><?php echo $Status ?></span>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Class 10 Percentage</span><td><span class="verify_text_table"><?php echo $Class10Percentage ?></span>
+			</tr>
+			<tr>
+			<td><span class="verify_text_table">Class 12 Percentage</span><td><span class="verify_text_table"><?php echo $Class12Percentage ?></span>
+			</tr>
+			</body>
+	</table>
 	
 		
-			<form action="http://localhost/nitap/registration/educational_info" method="post">
+			<form action="http://localhost/temp_admission-master/registration/educational_info" method="post">
 				<input type="hidden" name="StudentID" value="<?php if($StudentID)echo $StudentID; ?>">
 				<input type="hidden" name="RegNo" value="<?php if($RegNo)echo $RegNo; ?>">
 				<input type="hidden" name="RollNo" value="<?php if($RollNo)echo $RollNo; ?>">

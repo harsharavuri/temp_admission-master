@@ -40,7 +40,6 @@ function display($key, $value){
 // Instantiation of inherited class
 $pdf = new PDF();
 $pdf->AliasNbPages();
-
 $pdf->AddPage();
 $pdf->Header1('Personal Info');
 $temp = array_keys((array)$personal_info);

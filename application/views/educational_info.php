@@ -35,19 +35,22 @@
 				<div class="form-group">
                     <label for="signup-inputAdmissionQuota" class="col-sm-3 col-lg-3 col-md-3 control-label">AdmissionQuota</label>
                     <div class="col-sm-9 col-lg-8 col-md-8">
-                        <input type="number" name="AdmissionQuota" class="form-control" id="signup-inputAdmissionQuota" placeholder="" value="<?php if($AdmissionQuota)echo $AdmissionQuota; ?>">
-                    </div>
-                </div>
-				<div class="form-group">
+						<select class="form-control"  name="AdmissionQuota" id="signup-inputAdmissionQuota">		
+						 <option value="JEE" <?php if($AdmissionQuota=='JEE')echo 'selected' ?>>JEE</option>
+						 <option value="DASA" <?php if($AdmissionQuota && $AdmissionQuota!='JEE')echo 'selected' ?>>DASA</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group" id="formMainsRank">
                     <label for="signup-inputMainsRank" class="col-sm-3 col-lg-3 col-md-3 control-label">Mains Rank</label>
                     <div class="col-sm-9 col-lg-8 col-md-8">
-                        <input required type="number" name="MainsRank" class="form-control" id="signup-inputMainsRank" placeholder="" value="<?php if($MainsRank)echo $MainsRank; ?>">
+                        <input type="number" name="MainsRank" class="form-control" id="signup-inputMainsRank" placeholder="" value="<?php if($MainsRank)echo $MainsRank; ?>">
                     </div>
                 </div>
-				<div class="form-group">
+				<div class="form-group" id="formSatScore">
                     <label for="signup-inputSatScore" class="col-sm-3 col-lg-3 col-md-3 control-label">Sat Score</label>
                     <div class="col-sm-9 col-lg-8 col-md-8">
-                        <input required type="number" name="SatScore" class="form-control" id="signup-inputSatScore" placeholder="" value="<?php if($SatScore)echo $SatScore; ?>">
+                        <input type="number" name="SatScore" class="form-control" id="signup-inputSatScore" placeholder="" value="<?php if($SatScore)echo $SatScore; ?>">
                     </div>
                 </div>
             </div>
@@ -80,8 +83,12 @@
 				<div class="form-group">
                     <label for="signup-inputStatus" class="col-sm-3 col-lg-3 col-md-3 control-label">Status</label>
                     <div class="col-sm-9 col-lg-8 col-md-8">
-                        <input required type="number" name="Status" class="form-control" id="signup-inputStatus" placeholder="" value="<?php if($Section)echo $Section; ?>">
-                    </div>
+					    <select class="form-control" name="Status" class="form-control" id="signup-inputStatus">		
+						 <option value="Yes" <?php if($Status=='Yes')echo 'selected' ?>>Admitted</option>
+						 <option value="No" <?php if($Status && $Status!='No')echo 'selected' ?>>Admission Cancelled</option>
+						</select>
+
+					</div>
                 </div>
                 
                <div class="form-group">

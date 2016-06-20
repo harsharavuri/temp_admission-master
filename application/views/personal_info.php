@@ -78,7 +78,7 @@
                         </div>
                     </div>
     				<div class="form-group">
-                        <label for="signup-inputHeight" class="col-sm-3 col-lg-3 col-md-3 control-label">Height</label>
+                        <label for="signup-inputHeight" class="col-sm-3 col-lg-3 col-md-3 control-label">Height (in cm )</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
                             <input type="number" name="Height" class="form-control" value="<?php if($Height)echo $Height ; ?>" id="signup-inputHeight" placeholder=""  >
                         </div>
@@ -86,7 +86,7 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
     				<div class="form-group">
-                        <label for="signup-inputWeight" class="col-sm-3 col-lg-3 col-md-3 control-label">Weight</label>
+                        <label for="signup-inputWeight" class="col-sm-3 col-lg-3 col-md-3 control-label">Weight (in kg )</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
                             <input type="number" name="Weight" class="form-control" value="<?php if($Weight)echo $Weight ; ?>" id="signup-inputWeight" placeholder=""  >
                         </div>
@@ -141,6 +141,7 @@
                         <label for="signup-inputCaste" class="col-sm-3 col-lg-3 col-md-3 control-label">Caste</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
                             <select required type="text" name="Caste" class="form-control" value="<?php if($Caste)echo $Caste ; ?>" id="signup-inputCaste" placeholder=""  >
+                                <option value="OBC">General</option>
                                 <option value="OBC">OBC</option>
                                 <option value="SC">SC</option>
                                 <option value="ST">ST</option>
