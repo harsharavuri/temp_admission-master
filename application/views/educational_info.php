@@ -6,7 +6,7 @@
  </div>
  <div class="row">
 	<div class="tab-pane form-panel" id="signup">
-            <form id="signup-form" action="http://localhost/temp_admission-master/registration/verify_educational_info" method="post" class="form-horizontal" role="form">
+            <form id="signup-form" action="verify_educational_info" method="post" class="form-horizontal" role="form">
              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <div class="form-group">
                     <label for="signup-inputID" class="col-sm-3 col-md-3 col-lg-3 control-label">Student ID</label>

@@ -7,7 +7,7 @@
     </div>    
     <div class="row">    
     	<div class="tab-pane form-panel" id="signup">
-            <form id="signup-form" method="post" action="http://localhost/temp_admission-master/registration/verify_personal_info" class="form-horizontal" role="form">
+            <form id="signup-form" method="post" action="registration/verify_personal_info" class="form-horizontal" role="form">
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     
                 

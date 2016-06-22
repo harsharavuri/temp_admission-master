@@ -10,7 +10,7 @@
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <strong id="status">Error:</strong>
         </div>
-            <form id="signup-form" action="http://localhost/temp_admission-master/registration/verify_payment_info" class="form-horizontal" role="form" method="post">
+            <form id="signup-form" action="verify_payment_info" class="form-horizontal" role="form" method="post">
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <div class="form-group">
                         <label for="signup-inputID" class="col-sm-3 col-md-3 col-lg-3 control-label">Student ID</label>

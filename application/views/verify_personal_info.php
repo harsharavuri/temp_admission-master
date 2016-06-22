@@ -1,11 +1,20 @@
 
 	
 <?php ?>
-		<div class="alert alert-danger">
+		<!-- <div class="alert alert-danger">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <strong id="status">Error:</strong>
-        </div>
-	<table class="verify_div table table-striped" id="verify_columns">
+        </div> -->
+        <h3 class="text-center">Please Verify Students Presonal Details</h3>
+        <hr>
+	<table class="verify_div table table-striped table-bordered" id="verify_columns">
+		<thead>
+			<tr>
+				<td class="text-center" style="background-color:coral;color:white"><big><b>Field</b></big></td>
+				<td class="text-center" style="background-color:coral;color:white"><big><b>Value</b></big> </td>
+			</tr>
+		</thead>
+		<tbody>
             <tr>
 			<td><span class="verify_text_table">Student ID</span></td><td><span class="verify_text_table"><?php echo $StudentID ?></span></td>
 			</tr>
@@ -75,10 +84,11 @@
 			<tr>
 			<td><span class="verify_text_table">Birth Date</span></td><td><span class="verify_text_table"><?php echo $BirthDate ?>	</span></td>
 			</tr>
+		</tbody>
 	</table>
 			
 				
-			<form action="http://localhost/temp_admission-master/registration/" method="post">
+			<form action="registration/" method="post">
 				<input type="hidden" name="StudentID" value="<?php if($StudentID)echo $StudentID; ?>">
 				<input type="hidden" name="FirstName" value="<?php if($FirstName)echo $FirstName; ?>">
 				<input type="hidden" name="MiddleName" value="<?php if($MiddleName)echo $MiddleName; ?>">
@@ -104,12 +114,14 @@
 				<input type="hidden" name="BirthDate" value="<?php if($BirthDate)echo $BirthDate; ?>">
 				<div class="form-group">
                     <div class="col-sm-6 col-md-4 col-lg-4 verify_button">
-                        <button type="submit" class="btn btn-primary btn-block ">Edit</button>
+                        <button type="submit" class="btn btn-default btn-block ">
+                        	Edit
+                        </button>
                     </div>
                 </div>
 			</form>
 	
-			<form id="register_personal_info" action="http://localhost/temp_admission-master/registration/educational_info" method="post">
+			<form id="register_personal_info" action="educational_info" method="post">
 				<input type="hidden" name="StudentID" id="signup-inputID" value="<?php if($StudentID)echo $StudentID; ?>">
 				<input type="hidden" name="FirstName" id="signup-inputFirstName" value="<?php if($FirstName)echo $FirstName; ?>">
 				<input type="hidden" name="MiddleName" id="signup-inputMiddleName" value="<?php if($MiddleName)echo $MiddleName; ?>">
@@ -134,7 +146,7 @@
 				<input type="hidden" name="BirthDate" id="signup-inputBirthDate" value="<?php if($BirthDate)echo $BirthDate; ?>">
 				<div class="form-group">
                     <div class="col-sm-6 col-md-4 col-lg-4 verify_button">
-                        <button type="submit" class="btn btn-primary btn-block" >Submit</button>
+                        <button type="submit" class="btn btn-danger btn-block" >Submit</button>
                     </div>
                 </div>
 			</form>

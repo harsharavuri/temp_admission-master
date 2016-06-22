@@ -1,6 +1,6 @@
 <?php
 require('fpdf.php');
-
+error_reporting(0);
 class PDF extends FPDF
 {
 // Page header

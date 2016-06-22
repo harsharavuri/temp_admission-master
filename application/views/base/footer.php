@@ -1,5 +1,5 @@
-<script src="<?php echo "http://localhost/temp_admission-master/assets/bootstrap.min.js"; ?>"></script>
-<script src="<?php echo "http://localhost/temp_admission-master/assets/signup.js"; ?>"></script>
+<script src="<?php echo base_url(); ?>assets/bootstrap.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/signup.js"></script>
 
 </body>
 </html>		

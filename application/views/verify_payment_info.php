@@ -5,7 +5,14 @@
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <strong id="status">Error:</strong>
         </div>
-	<table class="verify_div table table-striped" id="verify_columns">
+	<table class="verify_div table table-striped table-bordered" id="verify_columns">
+		<thead>
+			<tr>
+				<td class="text-center" style="background-color:coral;color:white"><big><b>Field</b></big></td>
+				<td class="text-center" style="background-color:coral;color:white"><big><b>Value</b></big> </td>
+			</tr>
+		</thead>
+		<tbody>
             <tr>
 			<td><span class="verify_text_table">Student ID</span></td><td><span class="verify_text_table"><?php echo $StudentID ?></span></td>
 			</tr>
@@ -24,11 +31,11 @@
 			<tr>
 			<td><span class="verify_text_table">Hosteler/DS</span></td><td><span class="verify_text_table"><?php echo $HostelerDS ?></span></td>
 			</tr>
-			
+		</tbody>
 	</table>
 			
 				
-			<form action="http://localhost/temp_admission-master/registration/payment_info" method="post">
+			<form action="payment_info" method="post">
 				<input type="hidden" name="StudentID" value="<?php if($StudentID)echo $StudentID; ?>">
 				<input type="hidden" name="PaymentMode" value="<?php if($PaymentMode)echo $PaymentMode; ?>">
 				<input type="hidden" name="Amount" value="<?php if($Amount)echo $Amount; ?>">
@@ -37,7 +44,7 @@
 				<input type="hidden" name="HostelerDS" value="<?php if($HostelerDS)echo $HostelerDS; ?>">
 				<div class="form-group">
                     <div class="col-sm-6 col-md-4 col-lg-4 verify_button">
-                        <button type="submit" class="btn btn-primary btn-block ">Edit</button>
+                        <button type="submit" class="btn btn-defult btn-block ">Edit</button>
                     </div>
                 </div>
 			</form>
@@ -51,7 +58,7 @@
 				<input type="hidden" name="HostelerDS" id="signup-inputHostelerDS" value="<?php if($HostelerDS)echo $HostelerDS; ?>">
 				<div class="form-group">
                     <div class="col-sm-6 col-md-4 col-lg-4 verify_button">
-                        <button type="submit" class="btn btn-primary btn-block" >Submit</button>
+                        <button type="submit" class="btn btn-danger btn-block" >Submit</button>
                     </div>
                 </div>
 			</form>

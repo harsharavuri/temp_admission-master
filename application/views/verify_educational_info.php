@@ -1,8 +1,15 @@
-<table class="verify_div table table-striped" id="verify_columns">
-			<div class="alert alert-danger">
-				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-				<strong id="status">Error:</strong>
-			</div>
+<div class="alert alert-danger">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	<strong id="status">Error:</strong>
+</div>
+
+<table class="verify_div table table-striped table-bordered" id="verify_columns">
+			<thead>
+				<tr>
+					<td class="text-center" style="background-color:coral;color:white"><big><b>Field</b></big></td>
+					<td class="text-center" style="background-color:coral;color:white"><big><b>Value</b></big> </td>
+				</tr>
+			</thead>
             <tbody>
 			<tr>
 			<td><span class="verify_text_table">Student ID</span><td><span class="verify_text_table"><?php echo $StudentID ?></span>
@@ -50,7 +57,7 @@
 	</table>
 	
 		
-			<form action="http://localhost/temp_admission-master/registration/educational_info" method="post">
+			<form action="registration/educational_info" method="post">
 				<input type="hidden" name="StudentID" value="<?php if($StudentID)echo $StudentID; ?>">
 				<input type="hidden" name="RegNo" value="<?php if($RegNo)echo $RegNo; ?>">
 				<input type="hidden" name="RollNo" value="<?php if($RollNo)echo $RollNo; ?>">
@@ -67,12 +74,12 @@
 				<input type="hidden" name="Class12Percentage" value="<?php if($Class12Percentage)echo $Class12Percentage; ?>">
 				<div class="form-group">
                     <div class="col-sm-6 col-md-4 col-lg-4 verify_button">
-                        <button type="submit" class="btn btn-primary btn-block ">Edit</button>
+                        <button type="submit" class="btn btn-default btn-block ">Edit</button>
                     </div>
                 </div>
 			</form>
 	
-			<form id="register_educational_info" action="http://localhost/temp_admission-master/registration/payment_info" method="post">
+			<form id="register_educational_info" action="payment_info" method="post">
 				<input type="hidden" name="StudentID" id="signup-inputID" value="<?php if($StudentID)echo $StudentID; ?>">
 				<input type="hidden" name="RegNo" id="signup-inputRegNo" value="<?php if($RegNo)echo $RegNo; ?>">
 				<input type="hidden" name="RollNo" id="signup-inputRollNo" value="<?php if($RollNo)echo $RollNo; ?>">
@@ -88,7 +95,7 @@
 				<input type="hidden" name="Class10Percentage" id="signup-inputClass10Percentage" value="<?php if($Class10Percentage)echo $Class10Percentage; ?>">
 				<input type="hidden" name="Class12Percentage" id="signup-inputClass12Percentage" value="<?php if($Class12Percentage)echo $Class12Percentage; ?>">
 				    <div class="col-sm-6 col-md-4 col-lg-4 verify_button">
-                        <button type="submit" class="btn btn-primary btn-block" >Submit</button>
+                        <button type="submit" class="btn btn-danger btn-block" >Submit</button>
                     </div>
                 </div>
 			</form>
