@@ -15,7 +15,7 @@
                     <div class="form-group">
                         <label for="signup-inputID" class="col-sm-3 col-md-3 col-lg-3 control-label">Student ID</label>
                         <div class="col-sm-9 col-lg-9 col-md-9">
-                            <input required type="number" name="StudentID" class="form-control" id="signup-inputStudentID" placeholder="" value="<?php if($StudentID)echo $StudentID; ?>">
+                            <input required type="number" name="StudentID" class="form-control" id="signup-inputStudentID" placeholder="52115912" value="<?php if($StudentID)echo $StudentID; ?>">
                         </div>
                     </div>
                     <div class="form-group">
@@ -30,7 +30,7 @@
     				<div class="form-group">
                         <label for="signup-inputAmount" class="col-sm-3 col-lg-3 col-md-3 control-label">Amount(Rs.)</label>
                         <div class="col-sm-9 col-lg-9 col-md-9">
-                            <input required type="number" name="Amount" class="form-control" id="signup-inputAmount" placeholder="" value="<?php if($Amount)echo $Amount; ?>">
+                            <input required type="number" name="Amount" class="form-control" id="signup-inputAmount" placeholder="35400" value="<?php if($Amount)echo $Amount; ?>">
                         </div>
                     </div>
                 </div>
@@ -38,13 +38,13 @@
     				<div class="form-group">
                         <label for="signup-inputDDUTRNumber" class="col-sm-3 col-lg-3 col-md-3 control-label">DD/UTR Number</label>
                         <div class="col-sm-9 col-lg-9 col-md-9">
-                            <input type="number" name="DDUTRNumber" class="form-control" id="signup-inputDDUTRNumber" placeholder="" value="<?php if($DDUTRNumber) echo $DDUTRNumber; ?>">
+                            <input type="number" name="DDUTRNumber" class="form-control" id="signup-inputDDUTRNumber" placeholder="DD/UTR Number" value="<?php if($DDUTRNumber) echo $DDUTRNumber; ?>">
                         </div>
                     </div>
     				<div class="form-group">
                         <label for="signup-inputStudentAccNumber" class="col-sm-3 col-lg-3 col-md-3 control-label">Student Account Number</label>
                         <div class="col-sm-9 col-lg-9 col-md-9">
-                            <input type="number" name="StudentAccNumber" class="form-control" id="signup-inputStudentAccNumber" placeholder="" value="<?php if($StudentAccNumber) echo $StudentAccNumber; ?>">
+                            <input type="number" name="StudentAccNumber" class="form-control" id="signup-inputStudentAccNumber" placeholder="Account Number" value="<?php if($StudentAccNumber) echo $StudentAccNumber; ?>">
                         </div>
                     </div>
     				

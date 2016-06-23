@@ -14,73 +14,73 @@
                     <div class="form-group">
                         <label for="signup-inputID" class="col-sm-3 col-md-3 col-lg-3 control-label">Student ID</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
-                            <input required type="number" name="StudentID" class="form-control" value="<?php if($StudentID)echo $StudentID ; ?>" id="signup-inputID" placeholder=""  >
+                            <input required type="number" name="StudentID" class="form-control" value="<?php if($StudentID)echo $StudentID ; ?>" id="signup-inputID" placeholder="51829102"  >
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="signup-inputFirstName" class="col-sm-3 col-lg-3 col-md-3 control-label">First Name</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
-                            <input required type="text" name="FirstName" class="form-control" value="<?php if($FirstName)echo $FirstName ; ?>" id="signup-inputFirstName" placeholder=""  >
+                            <input required type="text" name="FirstName" class="form-control" value="<?php if($FirstName)echo $FirstName ; ?>" id="signup-inputFirstName" placeholder="First Name"  >
                         </div>
                     </div>
     				<div class="form-group">
                         <label for="signup-inputFirstName" class="col-sm-3 col-lg-3 col-md-3 control-label">Middle Name</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
-                            <input type="text" name="MiddleName" class="form-control" value="<?php if($MiddleName)echo $MiddleName ; ?>" id="signup-inputMiddleName" placeholder=""  >
+                            <input type="text" name="MiddleName" class="form-control" value="<?php if($MiddleName)echo $MiddleName ; ?>" id="signup-inputMiddleName" placeholder="Middle Name"  >
                         </div>
                     </div>
     				<div class="form-group">
                         <label for="signup-inputLastName" class="col-sm-3 col-lg-3 col-md-3 control-label">Last Name</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
-                            <input required type="text" name="LastName" class="form-control" value="<?php if($LastName)echo $LastName ; ?>" id="signup-inputLastName" placeholder=""  >
+                            <input required type="text" name="LastName" class="form-control" value="<?php if($LastName)echo $LastName ; ?>" id="signup-inputLastName" placeholder="Last Name"  >
                         </div>
                     </div>
     				<div class="form-group">
                         <label for="signup-inputFullName" class="col-sm-3 col-lg-3 col-md-3 control-label">Full Name</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
-                            <input required type="text" name="FullName" class="form-control" value="<?php if($FullName)echo $FullName ; ?>" id="signup-inputFullName" placeholder=""  >
+                            <input required type="text" name="FullName" class="form-control" value="<?php if($FullName)echo $FullName ; ?>" id="signup-inputFullName" placeholder="Full Name"  >
                         </div>
                     </div>
     				<div class="form-group">
                         <label for="signup-inputFatherName" class="col-sm-3 col-lg-3 col-md-3 control-label">Father Name</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
-                            <input required type="text" name="FatherName" class="form-control" value="<?php if($FatherName)echo $FatherName ; ?>" id="signup-inputFatherName" placeholder=""  >
+                            <input required type="text" name="FatherName" class="form-control" value="<?php if($FatherName)echo $FatherName ; ?>" id="signup-inputFatherName" placeholder="Father Name"  >
                         </div>
                     </div>
     				<div class="form-group">
                         <label for="signup-inputMotherName" class="col-sm-3 col-lg-3 col-md-3 control-label">Mother Name</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
-                            <input required type="text" name="MotherName" class="form-control" value="<?php if($MotherName)echo $MotherName ; ?>" id="signup-inputMotherName" placeholder=""  >
+                            <input required type="text" name="MotherName" class="form-control" value="<?php if($MotherName)echo $MotherName ; ?>" id="signup-inputMotherName" placeholder="Mother Name"  >
                         </div>
                     </div>
     				<div class="form-group">
                         <label for="signup-inputStudentEmail" class="col-sm-3 col-lg-3 col-md-3 control-label">Student Email</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
-                            <input required type="email" name="StudentEmail" class="form-control" value="<?php if($StudentEmail)echo $StudentEmail ; ?>" id="signup-inputStudentEmail" placeholder=""  >
+                            <input required type="email" name="StudentEmail" class="form-control" value="<?php if($StudentEmail)echo $StudentEmail ; ?>" id="signup-inputStudentEmail" placeholder="Student Email"  >
                         </div>
                     </div>
     				<div class="form-group">
                         <label for="signup-inputParentEmail" class="col-sm-3 col-lg-3 col-md-3 control-label">Parent Email</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
-                            <input type="email" name="ParentEmail" class="form-control" value="<?php if($ParentEmail)echo $ParentEmail ; ?>" id="signup-inputParentEmail" placeholder=""  >
+                            <input type="email" name="ParentEmail" class="form-control" value="<?php if($ParentEmail)echo $ParentEmail ; ?>" id="signup-inputParentEmail" placeholder="Parent Email"  >
                         </div>
                     </div>
     				<div class="form-group">
                         <label for="signup-inputAddress" class="col-sm-3 col-lg-3 col-md-3 control-label">Address</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
-                            <input required type="text" name="Address" class="form-control" value="<?php if($Address)echo $Address ; ?>" id="signup-inputAddress" placeholder=""  >
+                            <input required type="text" name="Address" class="form-control" value="<?php if($Address)echo $Address ; ?>" id="signup-inputAddress" placeholder="Address"  >
                         </div>
                     </div>
     				<div class="form-group">
                         <label for="signup-inputDisability" class="col-sm-3 col-lg-3 col-md-3 control-label">Disability</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
-                            <input required type="text" name="Disability" class="form-control" value="<?php if($Disability)echo $Disability ; ?>" id="signup-inputDisability" placeholder=""  >
+                            <input required type="text" name="Disability" class="form-control" value="<?php if($Disability)echo $Disability ; ?>" id="signup-inputDisability" placeholder="Disability"  >
                         </div>
                     </div>
     				<div class="form-group">
                         <label for="signup-inputHeight" class="col-sm-3 col-lg-3 col-md-3 control-label">Height (in cm )</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
-                            <input type="number" name="Height" class="form-control" value="<?php if($Height)echo $Height ; ?>" id="signup-inputHeight" placeholder=""  >
+                            <input type="number" name="Height" class="form-control" value="<?php if($Height)echo $Height ; ?>" id="signup-inputHeight" placeholder="175"  >
                         </div>
                     </div>
                 </div>
@@ -88,43 +88,43 @@
     				<div class="form-group">
                         <label for="signup-inputWeight" class="col-sm-3 col-lg-3 col-md-3 control-label">Weight (in kg )</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
-                            <input type="number" name="Weight" class="form-control" value="<?php if($Weight)echo $Weight ; ?>" id="signup-inputWeight" placeholder=""  >
+                            <input type="number" name="Weight" class="form-control" value="<?php if($Weight)echo $Weight ; ?>" id="signup-inputWeight" placeholder="70"  >
                         </div>
                     </div>
     				<div class="form-group">
                         <label for="signup-inputIdentificationMarks" class="col-sm-3 col-lg-3 col-md-3 control-label">Identification Marks</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
-                            <input required type="text" name="IdentificationMarks" class="form-control" value="<?php if($IdentificationMarks)echo $IdentificationMarks ; ?>" id="signup-inputIdentificationMarks" placeholder=""  >
+                            <input required type="text" name="IdentificationMarks" class="form-control" value="<?php if($IdentificationMarks)echo $IdentificationMarks ; ?>" id="signup-inputIdentificationMarks" placeholder="Identification Marks"  >
                         </div>
                     </div>
     				<div class="form-group">
                         <label for="signup-inputStudentMobile" class="col-sm-3 col-lg-3 col-md-3 control-label">Student Mobile</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
-                            <input required type="number" name="StudentMobile" class="form-control" value="<?php if($StudentMobile)echo $StudentMobile ; ?>" id="signup-inputStudentMobile" placeholder=""  >
+                            <input required type="number" name="StudentMobile" class="form-control" value="<?php if($StudentMobile)echo $StudentMobile ; ?>" id="signup-inputStudentMobile" placeholder="9999999999"  >
                         </div>
                     </div>
     				<div class="form-group">
                         <label for="signup-inputParentMobile" class="col-sm-3 col-lg-3 col-md-3 control-label">Parent Mobile</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
-                            <input required type="number" name="ParentMobile" class="form-control" value="<?php if($ParentMobile)echo $ParentMobile ; ?>" id="signup-inputParentMobile" placeholder=""  >
+                            <input required type="number" name="ParentMobile" class="form-control" value="<?php if($ParentMobile)echo $ParentMobile ; ?>" id="signup-inputParentMobile" placeholder="9999999999"  >
                         </div>
                     </div>
     				<div class="form-group">
                         <label for="signup-inputFatherOccupation" class="col-sm-3 col-lg-3 col-md-3 control-label">Father Occupation</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
-                            <input required type="text" name="FatherOccupation" class="form-control" value="<?php if($FatherOccupation)echo $FatherOccupation ; ?>" id="signup-inputFatherOccupation" placeholder=""  >
+                            <input required type="text" name="FatherOccupation" class="form-control" value="<?php if($FatherOccupation)echo $FatherOccupation ; ?>" id="signup-inputFatherOccupation" placeholder="Father's Occupation"  >
                         </div>
                     </div>
     				<div class="form-group">
                         <label for="signup-inputMotherOccupation" class="col-sm-3 col-lg-3 col-md-3 control-label">Mother Occupation</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
-                            <input required type="text" name="MotherOccupation" class="form-control" value="<?php if($MotherOccupation)echo $MotherOccupation ; ?>" id="signup-inputMotherOccupation" placeholder=""  >
+                            <input required type="text" name="MotherOccupation" class="form-control" value="<?php if($MotherOccupation)echo $MotherOccupation ; ?>" id="signup-inputMotherOccupation" placeholder="Mother's Occupation"  >
                         </div>
                     </div>
     				<div class="form-group">
                         <label for="signup-inputDisabilityType" class="col-sm-3 col-lg-3 col-md-3 control-label">Disability Type</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
-                            <input type="text" name="DisabilityType" class="form-control" value="<?php if($DisabilityType)echo $DisabilityType ; ?>" id="signup-inputDisabilityType" placeholder=""  >
+                            <input type="text" name="DisabilityType" class="form-control" value="<?php if($DisabilityType)echo $DisabilityType ; ?>" id="signup-inputDisabilityType" placeholder="Disability Type"  >
                         </div>
                     </div>
 
@@ -408,7 +408,7 @@
                    <div class="form-group">
                         <label for="signup-inputBirthDate" class="col-sm-3 col-lg-3 col-md-3 control-label">Birth Date</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
-                            <input required type="date" name="BirthDate" class="form-control" value="<?php if($BirthDate)echo $BirthDate ; ?>" id="signup-inputBirthDate" placeholder=""  >
+                            <input required type="date" name="BirthDate" class="form-control" value="<?php if($BirthDate)echo $BirthDate ; ?>" id="signup-inputBirthDate" placeholder="06/10/1998"  >
                         </div>
                     </div>
     				<div class="form-group">
