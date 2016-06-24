@@ -5,7 +5,10 @@ class PDF extends FPDF
 {
 // Page header
 function Header1($header)
-{
+{	// Logo
+	$this->Image(base_url().'/assets/images/logow.png',55,6,100);
+	// Line break
+	$this->Ln(10);
     // Arial bold 15
     $this->SetFont('Arial','B',15);
     // Move to the right
@@ -38,6 +41,7 @@ function display($key, $value){
 
 }
 // Instantiation of inherited class
+
 $pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
