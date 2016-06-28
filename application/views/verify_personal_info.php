@@ -88,7 +88,7 @@
 	</table>
 			
 				
-			<form action="registration/" method="post">
+			<form action="<?php echo base_url() ?>" method="post">
 				<input type="hidden" name="StudentID" value="<?php if($StudentID)echo $StudentID; ?>">
 				<input type="hidden" name="FirstName" value="<?php if($FirstName)echo $FirstName; ?>">
 				<input type="hidden" name="MiddleName" value="<?php if($MiddleName)echo $MiddleName; ?>">

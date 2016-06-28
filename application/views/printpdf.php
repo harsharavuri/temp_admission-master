@@ -6,9 +6,14 @@ class PDF extends FPDF
 // Page header
 function Header1($header)
 {	// Logo
-	$this->Image(base_url().'/assets/images/logow.png',55,6,100);
+	// Attributes
+	// 1. Path of the image to be display
+	// 2. Left coordinate
+	// 3. Top Coordinate
+	// 4. Image size(in %)
+	$this->Image(base_url().'/assets/images/logow.png',58,6,100);
 	// Line break
-	$this->Ln(10);
+	$this->Ln(7);
     // Arial bold 15
     $this->SetFont('Arial','B',15);
     // Move to the right

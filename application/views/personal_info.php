@@ -6,7 +6,7 @@
             </div>
     </div>    
     <div class="row">    
-    	<div class="tab-pane form-panel" id="signup">
+    	<div class="tab-pane form-panel" enctype="multipart/form-data" id="signup">
             <form id="signup-form" method="post" action="registration/verify_personal_info" class="form-horizontal" role="form">
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     
@@ -124,10 +124,12 @@
     				<div class="form-group">
                         <label for="signup-inputDisabilityType" class="col-sm-3 col-lg-3 col-md-3 control-label">Disability Type</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
-                            <input type="text" name="DisabilityType" class="form-control" value="<?php if($DisabilityType)echo $DisabilityType ; ?>" id="signup-inputDisabilityType" placeholder="Disability Type"  >
-                        </div>
-                    </div>
-
+    						<select class="form-control"  name="DisabilityType" id="signup-inputDisabilityType">		
+							 <option value="NO">NO</option>
+							 <option value="YES">YES</option>
+							</select>
+	                </div>
+					<br />
                     <div class="form-group">
                         <label for="signup-inputGender" class="col-sm-3 col-lg-3 col-md-3 control-label">Gender</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">

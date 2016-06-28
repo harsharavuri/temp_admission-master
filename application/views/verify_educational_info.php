@@ -57,7 +57,7 @@
 	</table>
 	
 		
-			<form action="registration/educational_info" method="post">
+			<form action="<?php echo base_url() ?>registration/educational_info" method="post">
 				<input type="hidden" name="StudentID" value="<?php if($StudentID)echo $StudentID; ?>">
 				<input type="hidden" name="RegNo" value="<?php if($RegNo)echo $RegNo; ?>">
 				<input type="hidden" name="RollNo" value="<?php if($RollNo)echo $RollNo; ?>">

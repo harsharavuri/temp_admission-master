@@ -111,12 +111,14 @@ $("#register_payment_info").submit(function(e) {
         {
             data = JSON.parse(data);
             console.log(data);
-            if (data.status === "success") {
+            if (data.status === 'success') {
+				window.open('http://localhost/temp_admission-master/registration/omaha');
+				window.open('http://localhost/temp_admission-master/registration/enrollmentslip');
 				register_success(data.url);		
 				$("#status").removeClass().addClass("alert alert-success").html(data.message);
-                //window.location = window.location;
+                
             } else {
-				console.log(data.url);
+				console.log();
                 
 				$("#status").removeClass().addClass("alert alert-danger").html(data.message);
             }

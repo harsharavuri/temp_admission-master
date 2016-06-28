@@ -41,6 +41,7 @@
 						</select>
 					</div>
 				</div>
+				
 				<div class="form-group" id="formMainsRank">
                     <label for="signup-inputMainsRank" class="col-sm-3 col-lg-3 col-md-3 control-label">Mains Rank</label>
                     <div class="col-sm-9 col-lg-8 col-md-8">
@@ -53,6 +54,7 @@
                         <input type="number" name="SatScore" class="form-control" id="signup-inputSatScore" placeholder="2300" value="<?php if($SatScore)echo $SatScore; ?>">
                     </div>
                 </div>
+				
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 				<div class="form-group">
@@ -64,8 +66,13 @@
 				<div class="form-group">
                     <label for="signup-inputYearOfStudy" class="col-sm-3 col-lg-3 col-md-3 control-label">Year Of Study</label>
                     <div class="col-sm-9 col-lg-8 col-md-8">
-                        <input required type="number" name="YearOfStudy" class="form-control" id="signup-inputYearOfStudy" placeholder="1" value="<?php if($YearOfStudy)echo $YearOfStudy; ?>">
-                    </div>
+                        <select class="form-control"  name="YearOfStudy" id="signup-inputYearOfStudy">		
+						 <option value="1">1</option>
+						 <option value="2">2</option>
+						 <option value="3">3</option>
+						 <option value="4">4</option>
+						</select>
+					</div>
                 </div>
 				<div class="form-group">
                     <label for="signup-inputAdmissionBatch" class="col-sm-3 col-lg-3 col-md-3 control-label">Admission Batch</label>
@@ -77,7 +84,16 @@
                 <div class="form-group">
                     <label for="signup-inputSemester" class="col-sm-3 col-lg-3 col-md-3 control-label">Semester</label>
                     <div class="col-sm-9 col-lg-8 col-md-8">
-                        <input required type="number" name="Semester" class="form-control" id="signup-inputSemester" placeholder="1" value="<?php if($Semester)echo $Semester; ?>">
+                        <select class="form-control"  name="Semester" id="signup-inputSemester">		
+						 <option value="1">1</option>
+						 <option value="2">2</option>
+						 <option value="3">3</option>
+						 <option value="4">4</option>
+						 <option value="4">5</option>
+						 <option value="4">6</option>
+						 <option value="4">7</option>
+						 <option value="4">8</option>
+						</select>
                     </div>
                 </div>
 				<div class="form-group">

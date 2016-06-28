@@ -210,6 +210,27 @@ class Registration extends CI_Controller {
 		$data['educational_info'] = $this->registrationmodel->get_educational_info($value);
 		$data['payment_info'] = $this->registrationmodel->get_payment_info($value);
 		$this->_render_page('/printpdf', $data);
+		
+	}
+	
+	function omaha(){
+		$data;
+		$value['StudentID'] = $this->session->userdata('StudentID');;
+		$data['personal_info'] = $this->registrationmodel->get_personal_info($value);
+		$data['educational_info'] = $this->registrationmodel->get_educational_info($value);
+		$data['payment_info'] = $this->registrationmodel->get_payment_info($value);
+		$this->_render_page('/omaha', $data);
+		
+	}
+	
+	function enrollmentslip(){
+		$data;
+		$value['StudentID'] = $this->session->userdata('StudentID');;
+		$data['personal_info'] = $this->registrationmodel->get_personal_info($value);
+		$data['educational_info'] = $this->registrationmodel->get_educational_info($value);
+		$data['payment_info'] = $this->registrationmodel->get_payment_info($value);
+		$this->_render_page('/enrollmentslip', $data);
+		
 	}
 	
 	function register_payment_info(){
