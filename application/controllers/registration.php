@@ -8,11 +8,13 @@ class Registration extends CI_Controller {
 		parent::__construct();
 		$this->load->library('form_validation');
 		$this->load->library('session');
+		
 		$this->load->helper('url');
 
 		$this->load->database();
 			
 		$this->load->helper('language');
+		$this->load->helper(array('form', 'url'));
 		$this->load->model('registrationmodel','',TRUE);
 	}
 
@@ -41,7 +43,8 @@ class Registration extends CI_Controller {
 		$data['Caste'] = $this->input->post('Caste');
 		$data['Country'] = $this->input->post('Country');
 		$data['BirthDate'] = $this->input->post('BirthDate');
-        $this->_render_page('/personal_info',$data);
+		$data['ImageName'] = $this->input->post('ImageName');
+		$this->_render_page('/personal_info',$data);
 	}
 	
 	
@@ -69,7 +72,8 @@ class Registration extends CI_Controller {
 		$data['Caste'] = $this->input->post('Caste');
 		$data['Country'] = $this->input->post('Country');
 		$data['BirthDate'] = $this->input->post('BirthDate');
-		$this->_render_page('/verify_personal_info',$data);
+		$data['ImageName'] = $this->input->post('ImageName');
+		$this->_render_page('./verify_personal_info',$data);
 	}	
 	
 	function register_personal_info(){
@@ -259,6 +263,58 @@ class Registration extends CI_Controller {
 		return FALSE;
 	}
 	
+	
+	public function upload_file()
+	{
+		$status = "";
+		$msg = "";
+		$file_element_name = 'Image';
+		if ($status != "error")
+		{
+			$config['upload_path'] = './files/';
+			$config['allowed_types'] = 'gif|jpg|png';
+			$config['max_size'] = 1024;
+			$config['encrypt_name'] = TRUE;
+		
+			$this->load->library('upload', $config);
+	 
+			if (!$this->upload->do_upload($file_element_name))
+			{
+				$status = 'error';
+				$msg = $this->upload->display_errors('', '');
+			}
+			else
+			{
+				$data = $this->upload->data();
+				//$file_id = $this->files_model->insert_file($data['file_name'], $_POST['title']);
+				if($data)
+				{	$filename = $data['file_name'];
+					$status = "success";
+					$msg = "File successfully uploaded";
+				}
+				else
+				{
+					unlink($data['full_path']);
+					$status = "error";
+					$msg = "Something went wrong when saving the file, please try again.";
+				}
+			}
+			@unlink($_FILES[$file_element_name]);
+		}
+		echo json_encode(array('status' => $status, 'msg' => $msg, 'filename' => $filename));
+	}
+	
+
+
+	function deleteFile(){
+		$status='error';
+		$imgBuffer = $this->input->post('imgBuffer');
+		if(unlink(base_url().'files/'.$imgBuffer)){
+			$status='success';
+		}
+		
+		echo json_encode(array('status' => $status));
+	}	
 	
 
 	 function _render_page($view, $data=null, $render=false)

@@ -1,7 +1,7 @@
 $("#register_personal_info").submit(function(e) {
     // e.preventDefault();
     var formData = "";
-    formData += "StudentID=" + $("#signup-inputID").val();
+    formData += "&StudentID=" + $("#signup-inputID").val();
     formData += "&FirstName=" + $("#signup-inputFirstName").val();
     formData += "&MiddleName=" + $("#signup-inputMiddleName").val();
     formData += "&LastName=" + $("#signup-inputLastName").val();
@@ -131,6 +131,61 @@ $("#register_payment_info").submit(function(e) {
     return false;
 });
 
+
+
+	$('#signup-upload').click(function(e) {
+		
+		var formData = new FormData();
+		//console.log(formData);
+		formData.append('Image',document.getElementById('Image').files[0]);
+		e.preventDefault();
+		$.ajax({
+			url:'./registration/upload_file/', 
+			data: formData,
+			cache: false,
+			contentType: false,
+			processData: false,
+			type: 'POST',
+			
+			success	: function (data, status)
+			{	if(data.status != 'error')
+				{	console.log(document.getElementById('ImageName'));
+					console.log(JSON.parse(data).filename);
+				var elem = document.getElementById('ImageName');
+				if(elem.value!=""){
+					var formData = 'imgBuffer='+document.getElementById('ImageBuffer').value;
+					document.getElementById('ImageBuffer').setAttribute('value', elem.value);
+					$.ajax({
+						url:'./registration/delete_file/', 
+						cache: false,
+						data:formData,
+						contentType: false,
+						processData: false,
+						type: 'POST',
+						
+						success	: function (data, status)
+						{	if(data.status != 'error')
+							{
+								console.log('success');
+							}else{
+								console.log('failure');
+							}
+							//alert(data.msg);
+						}
+					});
+				}
+				document.getElementById('ImageName').setAttribute('value', JSON.parse(data).filename);
+
+				}else{
+				}
+				//alert(data.msg);
+			}
+		});
+		return false;
+	});
+
+
+
 $(document).ready(
 	function(){if($('#signup-inputAdmissionQuota').find(':selected').val()=='JEE'){
 		
@@ -164,6 +219,8 @@ $('#signup-inputAdmissionQuota').change(function(){
 	}
 	
 });
+
+
 
 function register_success(url){
 	console.log(url);

@@ -17,6 +17,16 @@
 #signup{
 	/*margin-left:18%;*/
 }
+
+#signup-upload{
+	
+	height:80%;
+	line-height:80%;
+	position:absolute;
+	bottom:3%;
+	left:80%;
+}
+
 #name {
     text-align: center;
     letter-spacing: 2px;

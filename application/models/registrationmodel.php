@@ -22,6 +22,10 @@ class RegistrationModel extends CI_Model {
         return $this->db->insert('personal_info', $data);
 	}
 	
+	
+	
+	
+	
 	function register_educational_info($data){
 		
         $this->db->select();

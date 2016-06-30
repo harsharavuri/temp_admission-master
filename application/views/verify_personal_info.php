@@ -84,7 +84,11 @@
 			<tr>
 			<td><span class="verify_text_table">Birth Date</span></td><td><span class="verify_text_table"><?php echo $BirthDate ?>	</span></td>
 			</tr>
+			<td><span class="verify_text_table" style="position:relative;top:40px">Image Name</span></td><td><span class="verify_text_table"><img src="<?php echo base_url().'/files/'.$ImageName ?>" width="120px" height="120px">	</span></td>
+			
+			</tr>
 		</tbody>
+		
 	</table>
 			
 				
@@ -112,6 +116,7 @@
 				<input type="hidden" name="Caste" value="<?php if($Caste)echo $Caste; ?>">
 				<input type="hidden" name="Country" value="<?php if($Country)echo $Country; ?>">
 				<input type="hidden" name="BirthDate" value="<?php if($BirthDate)echo $BirthDate; ?>">
+				<input type="hidden" name="ImageName" value="<?php if($ImageName)echo $ImageName; ?>">
 				<div class="form-group">
                     <div class="col-sm-6 col-md-4 col-lg-4 verify_button">
                         <button type="submit" class="btn btn-default btn-block ">
@@ -144,6 +149,7 @@
 				<input type="hidden" name="Caste" id="signup-inputCaste" value="<?php if($Caste)echo $Caste; ?>">
 				<input type="hidden" name="Country" id="signup-inputCountry" value="<?php if($Country)echo $Country; ?>">
 				<input type="hidden" name="BirthDate" id="signup-inputBirthDate" value="<?php if($BirthDate)echo $BirthDate; ?>">
+				<input type="hidden" name="ImageName" value="<?php if($ImageName)echo $ImageName; ?>">
 				<div class="form-group">
                     <div class="col-sm-6 col-md-4 col-lg-4 verify_button">
                         <button type="submit" class="btn btn-danger btn-block" >Submit</button>
