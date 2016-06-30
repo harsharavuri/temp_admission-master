@@ -152,24 +152,25 @@ $("#register_payment_info").submit(function(e) {
 				{	console.log(document.getElementById('ImageName'));
 					console.log(JSON.parse(data).filename);
 				var elem = document.getElementById('ImageName');
+				//console.log(elem.value);
 				if(elem.value!=""){
-					var formData = 'imgBuffer='+document.getElementById('ImageBuffer').value;
+					//console.log(elem.value);
+					var formData="";
+					formData += 'imgBuffer='+$('#ImageBuffer').val();
+					console.log(formData);
 					document.getElementById('ImageBuffer').setAttribute('value', elem.value);
 					$.ajax({
-						url:'./registration/delete_file/', 
-						cache: false,
-						data:formData,
-						contentType: false,
-						processData: false,
+						url:'./registration/deleteFile/', 
 						type: 'POST',
-						
+						data:formData,
 						success	: function (data, status)
-						{	if(data.status != 'error')
+						{	if(JSON.parse(data).status == 'success')
 							{
 								console.log('success');
 							}else{
 								console.log('failure');
 							}
+							console.log(data);
 							//alert(data.msg);
 						}
 					});

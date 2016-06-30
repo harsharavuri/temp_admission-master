@@ -309,11 +309,13 @@ class Registration extends CI_Controller {
 	function deleteFile(){
 		$status='error';
 		$imgBuffer = $this->input->post('imgBuffer');
-		if(unlink(base_url().'files/'.$imgBuffer)){
+		
+		if($imgBuffer && fopen('C:/xampp/htdocs/temp_admission-master/application/files/'.$imgBuffer, 'a')){
+			if(unlink('C:/xampp/htdocs/temp_admission-master/application/files/'.$imgBuffer))
 			$status='success';
 		}
 		
-		echo json_encode(array('status' => $status));
+		echo json_encode(array('status' => $status, 'value'=>$imgBuffer));
 	}	
 	
 
