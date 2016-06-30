@@ -310,12 +310,13 @@ class Registration extends CI_Controller {
 		$status='error';
 		$imgBuffer = $this->input->post('imgBuffer');
 		
-		if($imgBuffer && fopen('C:/xampp/htdocs/temp_admission-master/application/files/'.$imgBuffer, 'a')){
-			if(unlink('C:/xampp/htdocs/temp_admission-master/application/files/'.$imgBuffer))
+		if($imgBuffer && $var= fopen('C:/xampp/htdocs/temp_admission-master/files/'.$imgBuffer, 'a')){
+			fclose($var);
+			if(unlink('C:/xampp/htdocs/temp_admission-master/files/'.$imgBuffer))
 			$status='success';
 		}
 		
-		echo json_encode(array('status' => $status, 'value'=>$imgBuffer));
+		echo json_encode(array('status' => $status, 'value'=>'C:/xampp/htdocs/temp_admission-master/files/'.$imgBuffer));
 	}	
 	
 

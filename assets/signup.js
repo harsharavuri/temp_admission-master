@@ -156,8 +156,8 @@ $("#register_payment_info").submit(function(e) {
 				if(elem.value!=""){
 					//console.log(elem.value);
 					var formData="";
-					formData += 'imgBuffer='+$('#ImageBuffer').val();
-					console.log(formData);
+					formData += 'imgBuffer='+$('#ImageName').val();
+					console.log(formData+"sadsadsa");
 					document.getElementById('ImageBuffer').setAttribute('value', elem.value);
 					$.ajax({
 						url:'./registration/deleteFile/', 
