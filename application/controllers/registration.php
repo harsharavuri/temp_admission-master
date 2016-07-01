@@ -320,6 +320,19 @@ class Registration extends CI_Controller {
 	}	
 	
 
+	function crop(){
+		$this->load->view('photo');
+	}
+	function send_base64(){
+		if (isset($_POST['base'])) {
+			$data = $_POST['base'];
+			list($type, $data) = explode(';', $data);
+			list(, $data)      = explode(',', $data);
+			$data = base64_decode($data);
+			file_put_contents($_SERVER['DOCUMENT_ROOT']."/ap_admissions/files/".$_POST['name'], $data);
+		}
+	}
+
 	 function _render_page($view, $data=null, $render=false)
      {  //$data['current_page'] = isset($data['current_page']) ? $data['current_page'] : 'home';
         $view_html = array(
@@ -331,5 +344,7 @@ class Registration extends CI_Controller {
         );
         if (!$render) return $view_html;
     }
+
+
 
 }

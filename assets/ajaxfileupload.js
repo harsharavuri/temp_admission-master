@@ -11,7 +11,7 @@
 
 ;(function($) {
 	$.fn.AjaxFileUpload = function(options) {
-		
+		alert("start");
 		var defaults = {
 			action:     "./registration/do_upload",
 			onChange:   function(filename) {},
@@ -21,6 +21,7 @@
 		settings = $.extend({}, defaults, options),
 		randomId = (function() {
 			var id = 0;
+			alert("randomId");
 			return function () {
 				return "_AjaxFileUpload" + id++;
 			};
@@ -47,13 +48,13 @@
 			settings.onChange.call($clone[0], filename);
 
 			iframe.bind("load", {element: $clone, form: form, filename: filename}, onComplete);
-			
+			alert("onChange");
 			form.append($element).bind("submit", {element: $clone, iframe: iframe, filename: filename}, onSubmit).submit();
 		}
 		
 		function onSubmit(e) {
 			var data = settings.onSubmit.call(e.data.element, e.data.filename);
-
+			alert("onSubmit");
 			// If false cancel the submission
 			if (data === false) {
 				// Remove the temporary form and iframe
@@ -73,6 +74,7 @@
 		}
 		
 		function onComplete (e) {
+			alert("onComplete");
 			var $iframe  = $(e.target),
 				doc      = ($iframe[0].contentWindow || $iframe[0].contentDocument).document,
 				response = doc.body.innerHTML;
@@ -91,6 +93,7 @@
 		}
 
 		function createIframe() {
+			alert("createIframe");
 			var id = randomId();
 
 			// The iframe must be appended as a string otherwise IE7 will pop up the response in a new window
@@ -102,6 +105,7 @@
 		}
 		
 		function createForm(iframe) {
+			alert("createForm");
 			return $("<form />")
 				.attr({
 					method: "post",
