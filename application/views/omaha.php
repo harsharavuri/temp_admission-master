@@ -239,3 +239,4 @@
             <br><br>
         </div>
     </div>
+	<script>window.print()</script>

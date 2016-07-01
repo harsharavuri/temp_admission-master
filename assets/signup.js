@@ -114,6 +114,7 @@ $("#register_payment_info").submit(function(e) {
             if (data.status === 'success') {
 				window.open('http://localhost/temp_admission-master/registration/omaha');
 				window.open('http://localhost/temp_admission-master/registration/enrollmentslip');
+				
 				register_success(data.url);		
 				$("#status").removeClass().addClass("alert alert-success").html(data.message);
                 
@@ -151,6 +152,7 @@ $("#register_payment_info").submit(function(e) {
 				{	//console.log(document.getElementById('ImageName'));
 					window.location="./registration/crop?src="+JSON.parse(data).filename+"";
 				var elem = document.getElementById('ImageName');
+				
 				if(elem.value!=""){
 					var formData="";
 					formData += 'imgBuffer='+$('#ImageName').val();
