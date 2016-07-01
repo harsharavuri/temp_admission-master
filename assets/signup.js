@@ -150,7 +150,8 @@ $("#register_payment_info").submit(function(e) {
 			success	: function (data, status)
 			{	if(data.status != 'error')
 				{	console.log(document.getElementById('ImageName'));
-					console.log(JSON.parse(data).filename);
+					// console.log(JSON.parse(data).filename);
+					window.location="./registration/crop?src="+JSON.parse(data).filename+"";
 				var elem = document.getElementById('ImageName');
 				//console.log(elem.value);
 				if(elem.value!=""){
