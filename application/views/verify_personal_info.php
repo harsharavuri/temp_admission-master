@@ -149,7 +149,7 @@
 				<input type="hidden" name="Caste" id="signup-inputCaste" value="<?php if($Caste)echo $Caste; ?>">
 				<input type="hidden" name="Country" id="signup-inputCountry" value="<?php if($Country)echo $Country; ?>">
 				<input type="hidden" name="BirthDate" id="signup-inputBirthDate" value="<?php if($BirthDate)echo $BirthDate; ?>">
-				<input type="hidden" name="ImageName" value="<?php if($ImageName)echo $ImageName; ?>">
+				<input type="hidden" name="ImageName" id="ImageName" value="<?php if($ImageName)echo $ImageName; ?>">
 				<div class="form-group">
                     <div class="col-sm-6 col-md-4 col-lg-4 verify_button">
                         <button type="submit" class="btn btn-danger btn-block" >Submit</button>

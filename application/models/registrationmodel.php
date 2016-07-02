@@ -25,7 +25,6 @@ class RegistrationModel extends CI_Model {
 	
 	
 	
-	
 	function register_educational_info($data){
 		
         $this->db->select();

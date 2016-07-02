@@ -101,8 +101,11 @@ class Registration extends CI_Controller {
 		$data['Caste'] = $this->input->post('Caste');
 		$data['Country'] = $this->input->post('Country');
 		$data['BirthDate'] = $this->input->post('BirthDate');
+		$extension = explode('.', $this->input->post('ImageName'));
+		$data['ImageName'] = $data['StudentID'].'.'.$extension[1];
 		// All the values in data variable are to be stored in the corresponding table
 		if($this->registrationmodel->register_personal_info($data)){
+			rename('C:/xampp/htdocs/temp_admission-master/files/'.$this->input->post('ImageName'),'C:/xampp/htdocs/temp_admission-master/files/'.$data['StudentID'].'.'.$extension[1]);
 			$stat['status'] = "success";
             $stat['message'] = 'Account successfully created. Login now.';
             $stat['url'] = 'educational_info';
@@ -274,6 +277,7 @@ class Registration extends CI_Controller {
 			$config['upload_path'] = './files/';
 			$config['allowed_types'] = 'gif|jpg|png';
 			$config['max_size'] = 1024;
+			//$config['overwrite'] = 1024;
 			$config['encrypt_name'] = TRUE;
 		
 			$this->load->library('upload', $config);
@@ -282,6 +286,7 @@ class Registration extends CI_Controller {
 			{
 				$status = 'error';
 				$msg = $this->upload->display_errors('', '');
+				$filename = 'error';
 			}
 			else
 			{
@@ -297,6 +302,7 @@ class Registration extends CI_Controller {
 					unlink($data['full_path']);
 					$status = "error";
 					$msg = "Something went wrong when saving the file, please try again.";
+					$filename = 'error';
 				}
 			}
 			@unlink($_FILES[$file_element_name]);
