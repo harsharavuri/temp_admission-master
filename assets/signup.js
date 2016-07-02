@@ -24,6 +24,7 @@ $("#register_personal_info").submit(function(e) {
 	formData += "&Caste=" + $("#signup-inputCaste").val();
 	formData += "&Country=" + $("#signup-inputCountry").val();
 	formData += "&BirthDate=" + $("#signup-inputBirthDate").val();
+	formData += "&ImageName=" + $("#ImageName").val();
 	$.ajax({
         url : "./register_personal_info",
         type: "POST",
@@ -42,7 +43,7 @@ $("#register_personal_info").submit(function(e) {
 			
         },
         error: function (jqXHR, textStatus, errorThrown)
-        {	console.log(error);
+        {	alert(error);
             $("#status").removeClass().addClass("alert alert-danger").html("Account is already created. Please login with your email and password");
         }
     });
@@ -110,16 +111,17 @@ $("#register_payment_info").submit(function(e) {
         success: function(data, textStatus, jqXHR)
         {
             data = JSON.parse(data);
-            console.log(data);
+            //console.log(data);
             if (data.status === 'success') {
 				window.open('http://localhost/temp_admission-master/registration/omaha');
 				window.open('http://localhost/temp_admission-master/registration/enrollmentslip');
+				
 				register_success(data.url);		
 				$("#status").removeClass().addClass("alert alert-success").html(data.message);
                 
             } else {
-				console.log();
-                
+				//console.log();
+                alert(data.msg);
 				$("#status").removeClass().addClass("alert alert-danger").html(data.message);
             }
         },
@@ -136,7 +138,9 @@ $("#register_payment_info").submit(function(e) {
 	$('#signup-upload').click(function(e) {
 		
 		var formData = new FormData();
-		//console.log(formData);
+		if($('signup-inputID').value==""){
+			//alert('Fill your id first');
+		}
 		formData.append('Image',document.getElementById('Image').files[0]);
 		e.preventDefault();
 		$.ajax({
@@ -148,38 +152,40 @@ $("#register_payment_info").submit(function(e) {
 			type: 'POST',
 			
 			success	: function (data, status)
-			{	if(data.status != 'error')
-				{	console.log(document.getElementById('ImageName'));
-					// console.log(JSON.parse(data).filename);
-					window.location="./registration/crop?src="+JSON.parse(data).filename+"";
-				var elem = document.getElementById('ImageName');
-				//console.log(elem.value);
+			{	data = JSON.parse(data);
+				if(data.status != 'error')
+				{	
+					window.location="./registration/crop?src="+data.filename+"";
+					//console.log('yo');
+					var elem = document.getElementById('ImageName');
+					
 				if(elem.value!=""){
-					//console.log(elem.value);
 					var formData="";
-					formData += 'imgBuffer='+$('#ImageBuffer').val();
-					console.log(formData);
+					formData += 'imgBuffer='+$('#ImageName').val();
 					document.getElementById('ImageBuffer').setAttribute('value', elem.value);
 					$.ajax({
 						url:'./registration/deleteFile/', 
 						type: 'POST',
 						data:formData,
 						success	: function (data, status)
-						{	if(JSON.parse(data).status == 'success')
+						{	if(data.status == 'success')
 							{
-								console.log('success');
+								alert('success');
 							}else{
-								console.log('failure');
+								if(data.msg!=undefined)
+								alert(data.msg);
 							}
-							console.log(data);
+							//console.log(data);
 							//alert(data.msg);
 						}
 					});
 				}
-				document.getElementById('ImageName').setAttribute('value', JSON.parse(data).filename);
-
+					document.getElementById('ImageName').setAttribute('value', data.filename);
+					window.location="./registration/crop?src="+data.filename+"";
 				}else{
+					alert(data.msg);
 				}
+				console.log();
 				//alert(data.msg);
 			}
 		});
@@ -225,6 +231,5 @@ $('#signup-inputAdmissionQuota').change(function(){
 
 
 function register_success(url){
-	console.log(url);
 	window.location.replace(url);
 }

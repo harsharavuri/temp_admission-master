@@ -1,3 +1,5 @@
+
+
 <?php
 require('fpdf.php');
 error_reporting(0);
@@ -21,7 +23,7 @@ function Header1($header)
     // Title
     $this->Cell(30,10,$header,0,0,'C');
     // Line break
-    $this->Ln(20);
+    $this->Ln(16);
 }
 
 // Page footer
@@ -35,12 +37,20 @@ function Footer1($footer = '')
     $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
 }
 
-function display($key, $value){	
+function display($key, $value){
+	$w = array(90, 60);	
 	$this->SetFont('Times','',12);
 	$this->SetX(40);
-	$this->Cell(10,10,$key,0);
-	$this->SetX(-60);
-	$this->Cell(10,10,$value,0,1);
+	if($key == 'ImageName'){$this->Ln(3);$this->setX(40);$this->Cell($w[0],10,'Updated Picture');}
+	else $this->Cell($w[0],10,$key,1);
+	$this->SetX(-80);
+	if($key!='ImageName'){
+		$this->Cell($w[1],10,$value,1,1);
+	}else{
+		//$value = 'cf47d358655f73cf78c71db3d52420ee.png';
+		if($value)$this->Image(base_url().'/files/'.$value,131,265,25);
+	}
+	
 }
 
 
@@ -71,3 +81,4 @@ $pdf->display($key, $payment_info->$key);
 
 $pdf->Output();
 ?>
+

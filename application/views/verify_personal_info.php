@@ -136,6 +136,7 @@
 				<input type="hidden" name="MotherName" id="signup-inputMotherName" value="<?php if($MotherName)echo $MotherName; ?>">
 				<input type="hidden" name="StudentEmail" id="signup-inputStudentEmail" value="<?php if($StudentEmail)echo $StudentEmail; ?>">
 				<input type="hidden" name="ParentEmail" id="signup-inputParentEmail" value="<?php if($ParentEmail)echo $ParentEmail; ?>">
+				<input type="hidden" name="Address" id="signup-inputAddress" value="<?php if($Address)echo $Address; ?>">
 				<input type="hidden" name="Disability" id="signup-inputDisability" value="<?php if($Disability)echo $Disability; ?>">
 				<input type="hidden" name="Height" id="signup-inputHeight" value="<?php if($Height)echo $Height; ?>">
 				<input type="hidden" name="Weight" id="signup-inputWeight" value="<?php if($Weight)echo $Weight; ?>">
@@ -149,7 +150,7 @@
 				<input type="hidden" name="Caste" id="signup-inputCaste" value="<?php if($Caste)echo $Caste; ?>">
 				<input type="hidden" name="Country" id="signup-inputCountry" value="<?php if($Country)echo $Country; ?>">
 				<input type="hidden" name="BirthDate" id="signup-inputBirthDate" value="<?php if($BirthDate)echo $BirthDate; ?>">
-				<input type="hidden" name="ImageName" value="<?php if($ImageName)echo $ImageName; ?>">
+				<input type="hidden" name="ImageName" id="ImageName" value="<?php if($ImageName)echo $ImageName; ?>">
 				<div class="form-group">
                     <div class="col-sm-6 col-md-4 col-lg-4 verify_button">
                         <button type="submit" class="btn btn-danger btn-block" >Submit</button>

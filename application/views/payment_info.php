@@ -1,7 +1,7 @@
 <div class="container-fluid" style="overflow:hidden;padding:15px;">
  <div class="row">
     <div class="page-header" style="text-align:center">
-      <h1>Educational Information Form</h1>
+      <h1>Payment Information Form</h1>
     </div>
  </div>
  <div class="row">

@@ -63,5 +63,8 @@
                 </div>
 			</form>
 			
+<script>
+	alert('Please enable pop ups for your e-receipts');
+</script>
 				
 		

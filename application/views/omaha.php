@@ -10,6 +10,7 @@
 			<button data-step='9' data-intro='Print table given below' data-position='left' type="button" onclick="window.print()" title="Print table given below"  class="pull-right btn btn-sm btn-primary hidden-print"><span class="glyphicon glyphicon-print"></span> Print</button>
 				
 </div>
+
 <div class="hidden-print">
 </br></br></br>
 </div>
@@ -239,3 +240,4 @@
             <br><br>
         </div>
     </div>
+	<script>window.print()</script>
