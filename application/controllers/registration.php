@@ -212,7 +212,7 @@ class Registration extends CI_Controller {
 	
 	function printpdf(){
 		$data;
-		$value['StudentID'] = $this->session->userdata('StudentID');;
+		$value['StudentID'] = $this->session->userdata('StudentID');
 		$data['personal_info'] = $this->registrationmodel->get_personal_info($value);
 		$data['educational_info'] = $this->registrationmodel->get_educational_info($value);
 		$data['payment_info'] = $this->registrationmodel->get_payment_info($value);
@@ -222,7 +222,9 @@ class Registration extends CI_Controller {
 	
 	function omaha(){
 		$data;
+
 		$value['StudentID'] = $this->session->userdata('StudentID');;
+		
 		$data['personal_info'] = $this->registrationmodel->get_personal_info($value);
 		$data['educational_info'] = $this->registrationmodel->get_educational_info($value);
 		$data['payment_info'] = $this->registrationmodel->get_payment_info($value);

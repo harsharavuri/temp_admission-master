@@ -47,7 +47,7 @@ function display($key, $value){
 	if($key!='ImageName'){
 		$this->Cell($w[1],10,$value,1,1);
 	}else{
-		$value = 'cf47d358655f73cf78c71db3d52420ee.png';
+		//$value = 'cf47d358655f73cf78c71db3d52420ee.png';
 		if($value)$this->Image(base_url().'/files/'.$value,131,265,25);
 	}
 	

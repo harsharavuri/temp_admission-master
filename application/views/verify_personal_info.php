@@ -136,6 +136,7 @@
 				<input type="hidden" name="MotherName" id="signup-inputMotherName" value="<?php if($MotherName)echo $MotherName; ?>">
 				<input type="hidden" name="StudentEmail" id="signup-inputStudentEmail" value="<?php if($StudentEmail)echo $StudentEmail; ?>">
 				<input type="hidden" name="ParentEmail" id="signup-inputParentEmail" value="<?php if($ParentEmail)echo $ParentEmail; ?>">
+				<input type="hidden" name="Address" id="signup-inputAddress" value="<?php if($Address)echo $Address; ?>">
 				<input type="hidden" name="Disability" id="signup-inputDisability" value="<?php if($Disability)echo $Disability; ?>">
 				<input type="hidden" name="Height" id="signup-inputHeight" value="<?php if($Height)echo $Height; ?>">
 				<input type="hidden" name="Weight" id="signup-inputWeight" value="<?php if($Weight)echo $Weight; ?>">
