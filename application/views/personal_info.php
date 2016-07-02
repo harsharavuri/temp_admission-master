@@ -7,7 +7,7 @@
     </div>    
     <div class="row">    
     	<div class="tab-pane form-panel" enctype="multipart/form-data" id="signup">
-            <form id="signup-form" method="post" action="<?php echo base_url() ?>registration//verify_personal_info" class="form-horizontal" role="form">
+            <form id="signup-form" method="post" action="<?php echo base_url() ?>registration/verify_personal_info" class="form-horizontal" role="form">
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     
                 
@@ -413,7 +413,7 @@
                             <input required type="date" name="BirthDate" class="form-control" value="<?php if($BirthDate)echo $BirthDate ; ?>" id="signup-inputBirthDate" placeholder="06/10/1998"  >
                         </div>
                     </div>
-					<input required type="hidden" name="ImageName" value="<?php echo $ImageName ?>" id="ImageName">
+					<input required type="hidden" name="ImageName" value="<?php if($ImageName)echo $ImageName; ?>" id="ImageName">
 					<input required type="hidden" name="ImageBuffer" value="" id="ImageBuffer">
 					<div class="form-group">
 					    <label for="signup-inputImage" class="col-sm-3 col-lg-3 col-md-3 control-label">Image</label>
