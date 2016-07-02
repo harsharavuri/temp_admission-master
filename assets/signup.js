@@ -160,7 +160,7 @@ $(document).ready(function(){
 					$("#signup-inputStudentID").val(data.StudentID);
 					$("#signup-inputPaymentMode").val(data.PaymentMode);
 					$("#signup-inputAmount").val(data.Amount);
-					$("#signup-inputDDUTRNumber").val(data.DDUTRNumber);
+					$("#signup-inputDDUTRNumber").val(data.DDUtrNumber);
 					$("#signup-inputStudentAccNumber").val(data.StudentAccNumber);
 					$("#signup-inputHostelerDS").val(data.HostelerDS);
 								} else {
