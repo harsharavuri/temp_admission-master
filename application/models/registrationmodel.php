@@ -75,6 +75,19 @@ class RegistrationModel extends CI_Model {
         }
 	}
 	
+	
+	function get_all_students($table){
+		$this->db->select('StudentID');
+		$this->db->from($table);
+		$query =$this->db->get();
+		if ($query->num_rows() > 0) {
+            return $query;
+        } else {
+            return false;
+        }
+	}
+	
+	
 	function get_payment_info($data){
 		$this->db->select();
         $this->db->from('payment_info');

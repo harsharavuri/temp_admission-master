@@ -1,3 +1,6 @@
+
+
+
 <div class="container-fluid" style="overflow:hidden;padding:15px;">
  <div class="row">
     <div class="page-header" style="text-align:center">
@@ -67,3 +70,15 @@
         </div>
     </div>
 <div>
+
+
+
+<script>
+
+	$(document).ready(function(){
+		<?php foreach($completelist->result() as $row){ ?>
+			$('#dropdownMembers').append('<li><a href="#" value="'+<?php echo $row->StudentID; ?>+'"  class="drop_down_payment">'+<?php echo $row->StudentID; ?>+'</a></li>');
+		<?php } ?>
+	});
+</script>
+

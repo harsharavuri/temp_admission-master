@@ -3,7 +3,6 @@
 <?php ?>
 		<!-- <div class="alert alert-danger">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <strong id="status">Error:</strong>
         </div> -->
         <h3 class="text-center">Please Verify Students Presonal Details</h3>
         <hr>

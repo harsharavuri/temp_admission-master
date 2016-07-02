@@ -34,22 +34,148 @@ $("#register_personal_info").submit(function(e) {
             data = JSON.parse(data);
             console.log(data);
             if (data.status === "success") {
-			    register_success(data.url);		
+			    alert('success');
+				register_success(data.url);		
 				$("#status").removeClass().addClass("alert alert-success").html(data.message);
                 //window.location = window.location;
             } else {
-			    $("#status").removeClass().addClass("alert alert-danger").html(data.message);
+				alert(data.message);
+			    //$("#status").removeClass().addClass("alert alert-danger").html(data.message);
             }
 			
         },
         error: function (jqXHR, textStatus, errorThrown)
         {	alert(error);
-            $("#status").removeClass().addClass("alert alert-danger").html("Account is already created. Please login with your email and password");
+            //$("#status").removeClass().addClass("alert alert-danger").html("Account is already created. Please login with your email and password");
         }
     });
     return false;
 });
 
+$(document).ready(function(){
+	$(".drop_down_personal").on('click', function(e){
+		e.preventDefault();
+		var formData = "";
+			formData += "StudentID="+event.target.getAttribute('value');
+		$.ajax({
+			url : "./registration/get_personal_values",
+			type: "POST",
+			data : formData,
+			success: function(data, textStatus, jqXHR)
+			{	console.log(data);
+				data = JSON.parse(data);
+				if (data['StudentID']) {
+					$("#signup-inputID").val(data.StudentID);
+					$("#signup-inputFirstName").val(data.FirstName);
+					$("#signup-inputMiddleName").val(data.MiddleName);
+					$("#signup-inputLastName").val(data.LastName);
+					$("#signup-inputFullName").val(data.FullName);
+					$("#signup-inputFatherName").val(data.FatherName);
+					$("#signup-inputMotherName").val(data.MotherName);
+					$("#signup-inputStudentEmail").val(data.StudentEmail);
+					$("#signup-inputParentEmail").val(data.ParentEmail);
+					$("#signup-inputAddress").val(data.Address);
+					$("#signup-inputDisability").val(data.Disability);
+					$("#signup-inputHeight").val(data.Height);
+					$("#signup-inputWeight").val(data.Weight);
+					$("#signup-inputIdentificationMarks").val(data.IdentificationMarks);
+					$("#signup-inputStudentMobile").val(data.StudentMobile);
+					$("#signup-inputParentMobile").val(data.ParentMobile);
+					$("#signup-inputFatherOccupation").val(data.FatherOccupation);
+					$("#signup-inputMotherOccupation").val(data.MotherOccupation);
+					$("#signup-inputDisabilityType").val(data.DisabilityType);
+					$("#signup-inputGender").val(data.Gender);
+					$("#signup-inputCaste").val(data.Caste);
+					$("#signup-inputCountry").val(data.Country);
+					$("#signup-inputBirthDate").val(data.BirthDate);
+					$("#ImageName").val(data.ImageName);
+					alert('success');
+					
+				} else {
+					alert('Error');
+				}
+			},
+			error: function (jqXHR, textStatus, errorThrown)
+			{	
+				alert(errorThrown);
+			}
+		});
+	});
+
+	$(".drop_down_educational").on('click', function(e){
+		e.preventDefault();
+		var formData = "";
+			formData += "StudentID="+event.target.getAttribute('value');
+		$.ajax({
+			url : "./get_educational_values",
+			type: "POST",
+			data : formData,
+			success: function(data, textStatus, jqXHR)
+			{	console.log(data);
+				data = JSON.parse(data);
+				if (data['StudentID']) {
+					alert('success');
+					    $("#signup-inputID").val(data.StudentID);
+						$("#signup-inputRegNo").val(data.RegNo);
+						$("#signup-inputRollNo").val(data.RollNo);
+						$("#signup-inputSection").val(data.Section);
+						$("#signup-inputAdmissionQuota").val(data.AdmissionQuota);
+						$("#signup-inputMainsRank").val(data.MainsRank);
+						$("#signup-inputSatScore").val(data.SatScore);
+						$("#signup-inputYearOfAdmission").val(data.YearOfAdmission);
+						$("#signup-inputYearOfStudy").val(data.YearOfStudy);
+						$("#signup-inputAdmissionBatch").val(data.AdmissionBatch);
+						$("#signup-inputSemester").val(data.Semester);
+						$("#signup-inputStatus").val(data.Status);
+						$("#signup-inputClass10Percentage").val(data.Class10Percentage);
+						$("#signup-inputClass12Percentage").val(data.Class12Percentage);
+					
+				} else {
+					alert('Error');
+					console.log(data);
+				}
+			},
+			error: function (jqXHR, textStatus, errorThrown)
+			{	
+				alert(errorThrown);
+			}
+		});
+	});
+	
+	
+	$(".drop_down_payment").on('click', function(e){
+		e.preventDefault();
+		var formData = "";
+			formData += "StudentID="+event.target.getAttribute('value');
+			
+		$.ajax({
+			url : "./get_payment_values",
+			type: "POST",
+			data : formData,
+			success: function(data, textStatus, jqXHR)
+			{	console.log(data);
+				data = JSON.parse(data);
+				if (data['StudentID']) {
+					alert('success');
+					$("#signup-inputStudentID").val(data.StudentID);
+					$("#signup-inputPaymentMode").val(data.PaymentMode);
+					$("#signup-inputAmount").val(data.Amount);
+					$("#signup-inputDDUTRNumber").val(data.DDUTRNumber);
+					$("#signup-inputStudentAccNumber").val(data.StudentAccNumber);
+					$("#signup-inputHostelerDS").val(data.HostelerDS);
+								} else {
+					alert('Error');
+				}
+			},
+			error: function (jqXHR, textStatus, errorThrown)
+			{	
+				alert(errorThrown);
+			}
+		});
+	});
+	
+
+});
 
 $("#register_educational_info").submit(function(e) {
     // e.preventDefault();
@@ -77,17 +203,19 @@ $("#register_educational_info").submit(function(e) {
             data = JSON.parse(data);
             console.log(data);
             if (data.status === "success") {
-                register_success(data.url);		
-				$("#status").removeClass().addClass("alert alert-success").html(data.message);
+                alert('success');
+				register_success(data.url);		
+				//$("#status").removeClass().addClass("alert alert-success").html(data.message);
                 //window.location = window.location;
             } else {
-                
-				$("#status").removeClass().addClass("alert alert-danger").html(data.message);
+                alert(data.message);
+				//$("#status").removeClass().addClass("alert alert-danger").html(data.message);
             }
         },
         error: function (jqXHR, textStatus, errorThrown)
         {	//console.log(errorThrown);
-			$("#status").removeClass().addClass("alert alert-danger").html("Account is already created. Please login with your email and password");
+			alert("Account is already created. Please login with your email and password");
+			//$("#status").removeClass().addClass("alert alert-danger").html("Account is already created. Please login with your email and password");
         }
     });
     return false;
@@ -117,17 +245,18 @@ $("#register_payment_info").submit(function(e) {
 				window.open('http://localhost/temp_admission-master/registration/enrollmentslip');
 				
 				register_success(data.url);		
-				$("#status").removeClass().addClass("alert alert-success").html(data.message);
+				alert('success');
+				//$("#status").removeClass().addClass("alert alert-success").html(data.message);
                 
             } else {
 				//console.log();
                 alert(data.msg);
-				$("#status").removeClass().addClass("alert alert-danger").html(data.message);
+				//$("#status").removeClass().addClass("alert alert-danger").html(data.message);
             }
         },
         error: function (jqXHR, textStatus, errorThrown)
-        {	
-			$("#status").removeClass().addClass("alert alert-danger").html("Account is already created. Please login with your email and password");
+        {	alert("Account is already created. Please login with your email and password");
+			//$("#status").removeClass().addClass("alert alert-danger").html("Account is already created. Please login with your email and password");
         }
     });
     return false;

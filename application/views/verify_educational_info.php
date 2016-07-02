@@ -1,7 +1,6 @@
-<div class="alert alert-danger">
+<!--<div class="alert alert-danger">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	<strong id="status">Error:</strong>
-</div>
+</div>-->
 
 <table class="verify_div table table-striped table-bordered" id="verify_columns">
 			<thead>

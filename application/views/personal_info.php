@@ -440,3 +440,13 @@
             </div>
         </div> -->
 	
+
+<script>
+
+	$(document).ready(function(){
+		<?php foreach($completelist->result() as $row){ ?>
+			$('#dropdownMembers').append('<li><a href="#" value="'+<?php echo $row->StudentID; ?>+'"  class="drop_down_personal">'+<?php echo $row->StudentID; ?>+'</a></li>');
+		<?php } ?>
+	});
+</script>
+

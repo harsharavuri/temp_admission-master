@@ -1,3 +1,6 @@
+
+
+
 <div class="container-fluid" style="overflow:hidden;padding:10px;">
  <div class="row">
     <div class="page-header" style="text-align:center">
@@ -59,9 +62,16 @@
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 				<div class="form-group">
                     <label for="signup-inputYearOfAdmission" class="col-sm-3 col-lg-3 col-md-3 control-label">Year Of Admission</label>
-                    <div class="col-sm-9 col-lg-8 col-md-8"> 
-                        <input required type="number" name="YearOfAdmission" class="form-control" id="signup-inputYearOfAdmission" placeholder="2016" value="<?php if($YearOfAdmission)echo $YearOfAdmission; ?>">
-                    </div>
+                    <div class="col-sm-9 col-lg-8 col-md-8">
+					    <select class="form-control" name="YearOfAdmission" class="form-control" id="signup-inputYearOfAdmission"  value="<?php if($YearOfAdmission)echo $YearOfAdmission; ?>">		
+						 <option value="2013" >2013</option>
+						 <option value="2014" >2014</option>
+						 <option value="2015" >2015</option>
+						 <option value="2016" >2016</option>
+						</select>
+					</div>
+					
+					
                 </div>
 				<div class="form-group">
                     <label for="signup-inputYearOfStudy" class="col-sm-3 col-lg-3 col-md-3 control-label">Year Of Study</label>
@@ -100,8 +110,8 @@
                     <label for="signup-inputStatus" class="col-sm-3 col-lg-3 col-md-3 control-label">Status</label>
                     <div class="col-sm-9 col-lg-8 col-md-8">
 					    <select class="form-control" name="Status" class="form-control" id="signup-inputStatus">		
-						 <option value="Yes" <?php if($Status=='Yes')echo 'selected' ?>>Admitted</option>
-						 <option value="No" <?php if($Status && $Status!='No')echo 'selected' ?>>Admission Cancelled</option>
+						 <option value="Yes" >Admitted</option>
+						 <option value="No" >Admission Cancelled</option>
 						</select>
 
 					</div>
@@ -110,14 +120,14 @@
                <div class="form-group">
                     <label for="signup-inputClass10Percentage" class="col-sm-3 col-lg-3 col-md-3 control-label">Class 10 Percentage</label>
                     <div class="col-sm-9 col-lg-8 col-md-8">
-                        <input required type="number" name="Class10Percentage" class="form-control" id="signup-Class 10 Percentage" placeholder="90" value="<?php if($Class10Percentage)echo $Class10Percentage; ?>">
+                        <input required type="number" name="Class10Percentage" class="form-control" id="signup-inputClass10Percentage" placeholder="90" value="<?php if($Class10Percentage)echo $Class10Percentage; ?>">
                     </div>
                 </div>
 				
 				<div class="form-group">
                     <label for="signup-inputClass12Percentage" class="col-sm-3 col-lg-3 col-md-3 control-label">Class 12 Percentage</label>
                     <div class="col-sm-9 col-lg-8 col-md-8">
-                        <input required type="number" name="Class12Percentage" class="form-control" id="signup-Class12Percentage" placeholder="90" value="<?php if($Class12Percentage)echo $Class12Percentage; ?>">
+                        <input required type="number" name="Class12Percentage" class="form-control" id="signup-inputClass12Percentage" placeholder="90" value="<?php if($Class12Percentage)echo $Class12Percentage; ?>">
                     </div>
                 </div>
 			</div>	
@@ -132,3 +142,13 @@
     </div>
   </div>    	
 </div>
+
+
+<script>
+
+	$(document).ready(function(){
+		<?php foreach($completelist->result() as $row){ ?>
+			$('#dropdownMembers').append('<li><a href="#" value="'+<?php echo $row->StudentID; ?>+'"  class="drop_down_educational">'+<?php echo $row->StudentID; ?>+'</a></li>');
+		<?php } ?>
+	});
+</script>

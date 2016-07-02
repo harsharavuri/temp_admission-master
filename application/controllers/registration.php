@@ -19,7 +19,7 @@ class Registration extends CI_Controller {
 	}
 
 	
-	function index()
+	function index($val='')
 	{  	$data['StudentID'] = $this->input->post('StudentID');
 		$data['FirstName'] = $this->input->post('FirstName');
 		$data['MiddleName'] = $this->input->post('MiddleName');
@@ -44,6 +44,8 @@ class Registration extends CI_Controller {
 		$data['Country'] = $this->input->post('Country');
 		$data['BirthDate'] = $this->input->post('BirthDate');
 		$data['ImageName'] = $this->input->post('ImageName');
+		if($this->registrationmodel->get_all_students('personal_info'))
+			$data['completelist']=$this->registrationmodel->get_all_students('personal_info');
 		$this->_render_page('/personal_info',$data);
 	}
 	
@@ -136,6 +138,8 @@ class Registration extends CI_Controller {
 		$data['Status'] = $this->input->post('Status');
 		$data['Class10Percentage'] = $this->input->post('Class10Percentage');
 		$data['Class12Percentage'] = $this->input->post('Class12Percentage');
+		if($this->registrationmodel->get_all_students('educational_info'))
+			$data['completelist']=$this->registrationmodel->get_all_students('educational_info');
 		$this->_render_page('/educational_info', $data);
 	}
 	
@@ -196,6 +200,8 @@ class Registration extends CI_Controller {
 		$data['DDUTRNumber'] = $this->input->post('DDUTRNumber');
 		$data['StudentAccNumber'] = $this->input->post('StudentAccNumber');
 		$data['HostelerDS'] = $this->input->post('HostelerDS');
+		if($this->registrationmodel->get_all_students('payment_info'))
+			$data['completelist']=$this->registrationmodel->get_all_students('payment_info');
 		$this->_render_page('/payment_info',$data);
 	}
 	
@@ -219,6 +225,26 @@ class Registration extends CI_Controller {
 		$this->_render_page('/printpdf', $data);
 		
 	}
+	
+	
+	function get_personal_values(){
+		$value['StudentID'] = $this->input->post('StudentID');
+		$data['personal_info'] = $this->registrationmodel->get_personal_info($value);
+		echo json_encode($data['personal_info']);
+	}
+	
+	function get_educational_values(){
+		$value['StudentID'] = $this->input->post('StudentID');
+		$data['educational_info'] = $this->registrationmodel->get_educational_info($value);
+		echo json_encode($data['educational_info']);
+	}
+	
+	function get_payment_values(){
+		$value['StudentID'] = $this->input->post('StudentID');
+		$data['payment_info'] = $this->registrationmodel->get_payment_info($value);
+		echo json_encode($data['payment_info']);
+	}
+	
 	
 	function omaha(){
 		$data;
@@ -267,6 +293,8 @@ class Registration extends CI_Controller {
 		}
 		return FALSE;
 	}
+	
+	
 	
 	
 	public function upload_file()
