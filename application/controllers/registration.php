@@ -106,16 +106,25 @@ class Registration extends CI_Controller {
 		$extension = explode('.', $this->input->post('ImageName'));
 		$data['ImageName'] = $data['StudentID'].'.'.$extension[1];
 		// All the values in data variable are to be stored in the corresponding table
-		if($this->registrationmodel->register_personal_info($data)){
+		if($this->registrationmodel->register_personal_info($data)
+			|| $this->registrationmodel->update_personal_info($data) ){
 			rename('C:/xampp/htdocs/temp_admission-master/files/'.$this->input->post('ImageName'),'C:/xampp/htdocs/temp_admission-master/files/'.$data['StudentID'].'.'.$extension[1]);
 			$stat['status'] = "success";
+			$this->session->set_userdata(array(
+												'StudentID' => $data['StudentID']
+												));
             $stat['message'] = 'Account successfully created. Login now.';
             $stat['url'] = 'educational_info';
 			echo json_encode($stat);
 			return TRUE;
 		}
+		else if ($this->registrationmodel->update_personal_info($data) == 0){
+			$stat['status'] = "success";
+			$stat['message'] = 'Nothing updated.';
+			$stat['url'] = 'educational_info';
+		}
 		else{
-			$stat['message'] = 'Incorrect input or email id already register.';
+			$stat['message'] = 'We have some technical difficulties, try again later.';
 			echo json_encode($stat);
 		}
 		return FALSE;
@@ -178,18 +187,27 @@ class Registration extends CI_Controller {
 		$data['Class10Percentage'] = $this->input->post('Class10Percentage');
 		$data['Class12Percentage'] = $this->input->post('Class12Percentage');
 		// All the values in data variable are to be stored in the corresponding table
-		if($this->registrationmodel->register_educational_info($data)){
+		if($this->registrationmodel->register_educational_info($data)
+			|| $this->registrationmodel->update_educational_info($data) ){
 			$stat['status'] = "success";
+			$this->session->set_userdata(array(
+												'StudentID' => $data['StudentID']
+												));
             $stat['message'] = 'Account successfully created. Login now.';
             $stat['url'] = 'payment_info';
 			echo json_encode($stat);
 			return TRUE;
 		}
+		else if ($this->registrationmodel->update_educational_info($data) == 0){
+			$stat['status'] = "success";
+			$stat['message'] = 'Nothing updated.';
+            $stat['url'] = 'payment_info';
+		}
 		else{
-			$stat['message'] = 'Incorrect input or email id already register.';
+			$stat['message'] = $this->registrationmodel->update_educational_info($data);
 			echo json_encode($stat);
 		}
-		//return FALSE;
+		return TRUE;
 	}
 	
 	
@@ -248,12 +266,14 @@ class Registration extends CI_Controller {
 	
 	function omaha(){
 		$data;
-
-		$value['StudentID'] = $this->session->userdata('StudentID');;
 		
+		$value['StudentID'] = $this->session->userdata('StudentID');
+		$data['StudentID'] = $this->session->userdata('StudentID');
 		$data['personal_info'] = $this->registrationmodel->get_personal_info($value);
 		$data['educational_info'] = $this->registrationmodel->get_educational_info($value);
 		$data['payment_info'] = $this->registrationmodel->get_payment_info($value);
+		//if($this->registrationmodel->get_all_students('educational_info'))
+		//	$data['completelist']=$this->registrationmodel->get_all_students('educational_info');
 		$this->_render_page('/omaha', $data);
 		
 	}
@@ -264,6 +284,8 @@ class Registration extends CI_Controller {
 		$data['personal_info'] = $this->registrationmodel->get_personal_info($value);
 		$data['educational_info'] = $this->registrationmodel->get_educational_info($value);
 		$data['payment_info'] = $this->registrationmodel->get_payment_info($value);
+		//if($this->registrationmodel->get_all_students('educational_info'))
+		//	$data['completelist']=$this->registrationmodel->get_all_students('educational_info');
 		$this->_render_page('/enrollmentslip', $data);
 		
 	}
@@ -277,7 +299,8 @@ class Registration extends CI_Controller {
 		$data['StudentAccNumber'] = $this->input->post('StudentAccNumber');
 		$data['HostelerDS'] = $this->input->post('HostelerDS');
 		// All the values in data variable are to be stored in the corresponding table
-		if($this->registrationmodel->register_payment_info($data)){
+		if($this->registrationmodel->register_payment_info($data)
+			|| $this->registrationmodel->update_payment_info($data)){
 			$stat['status'] = 'success';
             $stat['message'] = 'Account successfully created. Login now.';
 			$stat['url'] = 'printpdf';
@@ -287,8 +310,13 @@ class Registration extends CI_Controller {
 			echo json_encode($stat);
 			return TRUE;
 		}
+		else if ($this->registrationmodel->update_payment_info($data) == 0){
+			$stat['status'] = "success";
+			$stat['message'] = 'Nothing updated.';
+			$stat['url'] = 'printpdf';
+		}
 		else{
-			$stat['message'] = 'Incorrect input or email id already register.';
+			$stat['message'] = 'We are having some technical difficulties.';
 			echo json_encode($stat);
 		}
 		return FALSE;

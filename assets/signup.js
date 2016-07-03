@@ -53,6 +53,10 @@ $("#register_personal_info").submit(function(e) {
 });
 
 $(document).ready(function(){
+	//document.getElementById('omaha').click();
+	//document.getElementById('enrollmentslip').click();
+
+	
 	$(".drop_down_personal").on('click', function(e){
 		e.preventDefault();
 		var formData = "";
@@ -213,7 +217,7 @@ $("#register_educational_info").submit(function(e) {
             }
         },
         error: function (jqXHR, textStatus, errorThrown)
-        {	//console.log(errorThrown);
+        {	console.log(errorThrown);
 			alert("Account is already created. Please login with your email and password");
 			//$("#status").removeClass().addClass("alert alert-danger").html("Account is already created. Please login with your email and password");
         }
@@ -223,8 +227,8 @@ $("#register_educational_info").submit(function(e) {
 
 
 $("#register_payment_info").submit(function(e) {
-    // e.preventDefault();
-    var formData = "";
+    e.preventDefault();
+	var formData = "";
 	formData += "StudentID=" + $("#signup-inputID").val();
     formData += "&PaymentMode=" + $("#signup-inputPaymentMode").val();
     formData += "&Amount=" + $("#signup-inputAmount").val();
@@ -241,6 +245,7 @@ $("#register_payment_info").submit(function(e) {
             data = JSON.parse(data);
             //console.log(data);
             if (data.status === 'success') {
+				
 				window.open('http://localhost/temp_admission-master/registration/omaha');
 				window.open('http://localhost/temp_admission-master/registration/enrollmentslip');
 				
@@ -255,7 +260,9 @@ $("#register_payment_info").submit(function(e) {
             }
         },
         error: function (jqXHR, textStatus, errorThrown)
-        {	alert("Account is already created. Please login with your email and password");
+        {	
+			console.log(errorThrown);
+			alert("Account is already created. Please login with your email and password");
 			//$("#status").removeClass().addClass("alert alert-danger").html("Account is already created. Please login with your email and password");
         }
     });

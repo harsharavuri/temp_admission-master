@@ -22,6 +22,15 @@ class RegistrationModel extends CI_Model {
         return $this->db->insert('personal_info', $data);
 	}
 	
+	function update_personal_info($data){
+		$this->db->where('StudentID', $data['StudentID']);
+        $query = $this->db->update('personal_info', $data);
+        if($this->db->affected_rows()!=1){
+            return false;
+        }
+        return true;
+	}
+	
 	
 	
 	
@@ -37,6 +46,16 @@ class RegistrationModel extends CI_Model {
         return $this->db->insert('educational_info', $data);
 	}
 	
+	function update_educational_info($data){
+		$this->db->where('StudentID', $data['StudentID']);
+        $this->db->update('educational_info', $data);
+        if($this->db->affected_rows()!=1){
+            return false;
+        }
+        return true;
+	}
+	
+	
 	function register_payment_info($data){
 		
         $this->db->select();
@@ -49,6 +68,15 @@ class RegistrationModel extends CI_Model {
 		//return true;
         return $this->db->insert('payment_info', $data);
 	
+	}
+	
+	function update_payment_info($data){
+		$this->db->where('StudentID', $data['StudentID']);
+        $query = $this->db->update('payment_info', $data);
+        if($this->db->affected_rows()!=1){
+            return false;
+        }
+        return true;
 	}
 	
 	function get_personal_info($data){
