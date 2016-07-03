@@ -11,10 +11,7 @@
 			</thead>
             <tbody>
 			<tr>
-			<td><span class="verify_text_table">Student ID</span><td><span class="verify_text_table"><?php echo $StudentID ?></span>
-			</tr>
-			<tr>
-			<td><span class="verify_text_table">Registration Number</span><td><span class="verify_text_table"><?php echo $RegNo ?></span>
+			<td><span class="verify_text_table">Registration Number</span><td><span class="verify_text_table"><?php echo $StudentID ?></span>
 			</tr>
 			<tr>
 			<td><span class="verify_text_table">Roll Number</span><td><span class="verify_text_table"><?php echo $RollNo ?></span>
@@ -58,7 +55,6 @@
 		
 			<form action="<?php echo base_url() ?>registration/educational_info" method="post">
 				<input type="hidden" name="StudentID" value="<?php if($StudentID)echo $StudentID; ?>">
-				<input type="hidden" name="RegNo" value="<?php if($RegNo)echo $RegNo; ?>">
 				<input type="hidden" name="RollNo" value="<?php if($RollNo)echo $RollNo; ?>">
 				<input type="hidden" name="Section" value="<?php if($Section)echo $Section; ?>">
 				<input type="hidden" name="AdmissionQuota" value="<?php if($AdmissionQuota)echo $AdmissionQuota; ?>">
@@ -80,7 +76,6 @@
 	
 			<form id="register_educational_info" action="payment_info" method="post">
 				<input type="hidden" name="StudentID" id="signup-inputID" value="<?php if($StudentID)echo $StudentID; ?>">
-				<input type="hidden" name="RegNo" id="signup-inputRegNo" value="<?php if($RegNo)echo $RegNo; ?>">
 				<input type="hidden" name="RollNo" id="signup-inputRollNo" value="<?php if($RollNo)echo $RollNo; ?>">
 				<input type="hidden" name="Section" id="signup-inputSection" value="<?php if($Section)echo $Section; ?>">
 				<input type="hidden" name="AdmissionQuota" id="signup-inputAdmissionQuota" value="<?php if($AdmissionQuota)echo $AdmissionQuota; ?>">

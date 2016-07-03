@@ -16,7 +16,7 @@
             <form id="signup-form" action="verify_payment_info" class="form-horizontal" role="form" method="post">
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <div class="form-group">
-                        <label for="signup-inputID" class="col-sm-3 col-md-3 col-lg-3 control-label">Student ID</label>
+                        <label for="signup-inputID" class="col-sm-3 col-md-3 col-lg-3 control-label">Regsitration Number</label>
                         <div class="col-sm-9 col-lg-9 col-md-9">
                             <input required type="number" name="StudentID" class="form-control" id="signup-inputStudentID" placeholder="52115912" value="<?php if($StudentID)echo $StudentID; ?>">
                         </div>

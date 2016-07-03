@@ -14,7 +14,7 @@
 		</thead>
 		<tbody>
             <tr>
-			<td><span class="verify_text_table">Student ID</span></td><td><span class="verify_text_table"><?php echo $StudentID ?></span></td>
+			<td><span class="verify_text_table">Registration Number</span></td><td><span class="verify_text_table"><?php echo $StudentID ?></span></td>
 			</tr>
 			<tr>
 			<td><span class="verify_text_table">Payment Mode</span></td><td><span class="verify_text_table"><?php echo $PaymentMode ?></span></td>

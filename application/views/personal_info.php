@@ -12,7 +12,7 @@
                     
                 
                     <div class="form-group">
-                        <label for="signup-inputID" class="col-sm-3 col-md-3 col-lg-3 control-label">Student ID</label>
+                        <label for="signup-inputID" class="col-sm-3 col-md-3 col-lg-3 control-label">Registration Number</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
                             <input required type="number" name="StudentID" class="form-control" value="<?php if($StudentID)echo $StudentID ; ?>" id="signup-inputID" placeholder="51829102"  >
                         </div>

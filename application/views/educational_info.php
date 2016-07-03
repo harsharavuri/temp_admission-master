@@ -12,17 +12,12 @@
             <form id="signup-form" action="verify_educational_info" method="post" class="form-horizontal" role="form">
              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <div class="form-group">
-                    <label for="signup-inputID" class="col-sm-3 col-md-3 col-lg-3 control-label">Student ID</label>
+                    <label for="signup-inputID" class="col-sm-3 col-md-3 col-lg-3 control-label">Registration Number</label>
                     <div class="col-sm-9 col-lg-8 col-md-8">
                         <input required type="number" name="StudentID" class="form-control" id="signup-inputID" placeholder="51552912" value="<?php if($StudentID)echo $StudentID; ?>">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="signup-inputRegNo" class="col-sm-3 col-lg-3 col-md-3 control-label">Registration Number</label>
-                    <div class="col-sm-9 col-lg-8 col-md-8">
-                        <input required type="number" name="RegNo" class="form-control" id="signup-inputRegNo" placeholder="891728" value="<?php if($RegNo)echo $RegNo; ?>">
-                    </div>
-                </div>
+
 				<div class="form-group">
                     <label for="signup-inputRollNo" class="col-sm-3 col-lg-3 col-md-3 control-label">Roll Number</label>
                     <div class="col-sm-9 col-lg-8 col-md-8">

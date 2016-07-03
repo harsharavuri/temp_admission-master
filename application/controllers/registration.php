@@ -134,7 +134,6 @@ class Registration extends CI_Controller {
 	function educational_info(){
 		//$this->load->view('/educational_info');
 		$data['StudentID'] = $this->input->post('StudentID');
-		$data['RegNo'] = $this->input->post('RegNo');
 		$data['RollNo'] = $this->input->post('RollNo');
 		$data['Section'] = $this->input->post('Section');
 		$data['AdmissionQuota'] = $this->input->post('AdmissionQuota');
@@ -154,7 +153,6 @@ class Registration extends CI_Controller {
 	
 	function verify_educational_info(){
 		$data['StudentID'] = $this->input->post('StudentID');
-		$data['RegNo'] = $this->input->post('RegNo');
 		$data['RollNo'] = $this->input->post('RollNo');
 		$data['Section'] = $this->input->post('Section');
 		$data['AdmissionQuota'] = $this->input->post('AdmissionQuota');
@@ -173,7 +171,6 @@ class Registration extends CI_Controller {
 	function register_educational_info(){
 		$stat['status'] = 'failure';
 		$data['StudentID'] = $this->input->post('StudentID');
-		$data['RegNo'] = $this->input->post('RegNo');
 		$data['RollNo'] = $this->input->post('RollNo');
 		$data['Section'] = $this->input->post('Section');
 		$data['AdmissionQuota'] = $this->input->post('AdmissionQuota');
