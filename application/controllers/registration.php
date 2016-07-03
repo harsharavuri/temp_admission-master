@@ -105,7 +105,7 @@ class Registration extends CI_Controller {
 		$data['ImageName'] = $data['StudentID'].'.'.$extension[1];
 		// All the values in data variable are to be stored in the corresponding table
 		if($this->registrationmodel->register_personal_info($data)){
-			rename('C:/xampp/htdocs/temp_admission-master/files/'.$this->input->post('ImageName'),'C:/xampp/htdocs/temp_admission-master/files/'.$data['StudentID'].'.'.$extension[1]);
+			rename($_SERVER['DOCUMENT_ROOT'].'/ap_admissions/files/'.$this->input->post('ImageName'),$_SERVER['DOCUMENT_ROOT'].'/ap_admissions/files/'.$data['StudentID'].'.'.$extension[1]);
 			$stat['status'] = "success";
             $stat['message'] = 'Account successfully created. Login now.';
             $stat['url'] = 'educational_info';
@@ -318,9 +318,9 @@ class Registration extends CI_Controller {
 		$status='error';
 		$imgBuffer = $this->input->post('imgBuffer');
 		
-		if($imgBuffer && $var= fopen('C:/xampp/htdocs/temp_admission-master/files/'.$imgBuffer, 'a')){
+		if($imgBuffer && $var= fopen($_SERVER['DOCUMENT_ROOT'].'/temp_admission-master/files/'.$imgBuffer, 'a')){
 			fclose($var);
-			if(unlink('C:/xampp/htdocs/temp_admission-master/files/'.$imgBuffer))
+			if(unlink($_SERVER['DOCUMENT_ROOT'].'/temp_admission-master/files/'.$imgBuffer))
 			$status='success';
 		}
 		
