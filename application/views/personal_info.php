@@ -143,7 +143,7 @@
                         <label for="signup-inputCaste" class="col-sm-3 col-lg-3 col-md-3 control-label">Caste</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
                             <select required type="text" name="Caste" class="form-control" value="<?php if($Caste)echo $Caste ; ?>" id="signup-inputCaste" placeholder=""  >
-                                <option value="OBC">General</option>
+                                <option value="General">General</option>
                                 <option value="OBC">OBC</option>
                                 <option value="SC">SC</option>
                                 <option value="ST">ST</option>

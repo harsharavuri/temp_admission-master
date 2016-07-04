@@ -87,10 +87,10 @@ $(document).ready(function(){
 					$("#signup-inputParentMobile").val(data.ParentMobile);
 					$("#signup-inputFatherOccupation").val(data.FatherOccupation);
 					$("#signup-inputMotherOccupation").val(data.MotherOccupation);
-					$("#signup-inputDisabilityType").val(data.DisabilityType);
-					$("#signup-inputGender").val(data.Gender);
-					$("#signup-inputCaste").val(data.Caste);
-					$("#signup-inputCountry").val(data.Country);
+					setDropDown(document.getElementById("signup-inputDisabilityType"),data.DisabilityType);//$("#signup-inputDisabilityType").val(data.DisabilityType);
+					setDropDown(document.getElementById("signup-inputGender"), data.Gender);//$("#signup-inputGender").val(data.Gender);
+					setDropDown(document.getElementById("signup-inputCaste"), data.Caste);//$("#signup-inputCaste").val(data.Caste);
+					setDropDown(document.getElementById("signup-inputCountry"), data.Country);//$("#signup-inputCountry").val(data.Country);
 					$("#signup-inputBirthDate").val(data.BirthDate);
 					$("#ImageName").val(data.ImageName);
 					alert('success');
@@ -123,14 +123,14 @@ $(document).ready(function(){
 						$("#signup-inputRegNo").val(data.RegNo);
 						$("#signup-inputRollNo").val(data.RollNo);
 						$("#signup-inputSection").val(data.Section);
-						$("#signup-inputAdmissionQuota").val(data.AdmissionQuota);
+						setDropDown(document.getElementById("signup-inputAdmissionQuota"),data.AdmissionQuota);//$("#signup-inputAdmissionQuota").val(data.AdmissionQuota);
 						$("#signup-inputMainsRank").val(data.MainsRank);
 						$("#signup-inputSatScore").val(data.SatScore);
-						$("#signup-inputYearOfAdmission").val(data.YearOfAdmission);
-						$("#signup-inputYearOfStudy").val(data.YearOfStudy);
+						setDropDown(document.getElementById("signup-inputYearOfAdmission"),data.YearOfAdmission);//$("#signup-inputYearOfAdmission").val(data.YearOfAdmission);
+						setDropDown(document.getElementById("signup-inputYearOfStudy"),data.YearOfStudy);//$("#signup-inputYearOfStudy").val(data.YearOfStudy);
 						$("#signup-inputAdmissionBatch").val(data.AdmissionBatch);
-						$("#signup-inputSemester").val(data.Semester);
-						$("#signup-inputStatus").val(data.Status);
+						setDropDown(document.getElementById("signup-inputSemester"),data.Semester);//$("#signup-inputSemester").val(data.Semester);
+						setDropDown(document.getElementById("signup-inputStatus"),data.Status);//$("#signup-inputStatus").val(data.Status);
 						$("#signup-inputClass10Percentage").val(data.Class10Percentage);
 						$("#signup-inputClass12Percentage").val(data.Class12Percentage);
 					
@@ -162,11 +162,11 @@ $(document).ready(function(){
 				if (data['StudentID']) {
 					alert('success');
 					$("#signup-inputStudentID").val(data.StudentID);
-					$("#signup-inputPaymentMode").val(data.PaymentMode);
+					setDropDown(document.getElementById("signup-inputPaymentMode"),data.PaymentMode);//$("#signup-inputPaymentMode").val(data.PaymentMode);
 					$("#signup-inputAmount").val(data.Amount);
 					$("#signup-inputDDUTRNumber").val(data.DDUtrNumber);
 					$("#signup-inputStudentAccNumber").val(data.StudentAccNumber);
-					$("#signup-inputHostelerDS").val(data.HostelerDS);
+					setDropDown(document.getElementById("signup-inputHostelerDS"),data.HostelerDS);//$("#signup-inputHostelerDS").val(data.HostelerDS);
 								} else {
 					alert('Error');
 				}
@@ -364,6 +364,19 @@ $('#signup-inputAdmissionQuota').change(function(){
 	
 });
 
+
+function setDropDown(elem, val){
+	console.log(elem);
+	console.log(val);
+	var length = elem.options.length;
+	for(var i=0;i<length;i++){
+		if(elem.options[i].value == val){
+			elem.options[i].setAttribute('selected',true);
+		}else{
+			elem.options[i].removeAttribute('selected',false);
+		}
+	}
+}
 
 
 function register_success(url){
