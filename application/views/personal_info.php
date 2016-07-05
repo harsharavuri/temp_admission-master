@@ -71,18 +71,29 @@
                             <input required type="text" name="Address" class="form-control" value="<?php if($Address)echo $Address ; ?>" id="signup-inputAddress" placeholder="Address"  >
                         </div>
                     </div>
-    				<div class="form-group">
-                        <label for="signup-inputDisability" class="col-sm-3 col-lg-3 col-md-3 control-label">Disability</label>
+    				
+    				
+					<div class="form-group">
+                       
+					<label for="signup-inputDisability" class="col-sm-3 col-lg-3 col-md-3 control-label">Disability</label>
+                    <div class="col-sm-9 col-lg-8 col-md-8">
+    						<select class="form-control"  name="Disability" id="signup-inputDisability">		
+							 <option value="NO">NO</option>
+							 <option value="YES">YES</option>
+							</select>
+	                </div>
+					</div>
+					
+					<div class="form-group">
+                        <label for="signup-inputDisabilityType" class="col-sm-3 col-lg-3 col-md-3 control-label">Disability Type</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
-                            <input required type="text" name="Disability" class="form-control" value="<?php if($Disability)echo $Disability ; ?>" id="signup-inputDisability" placeholder="Disability"  >
+                            <input required type="text" name="DisabilityType" class="form-control" value="<?php if($DisabilityType)echo $DisabilityType ; ?>" id="signup-inputDisabilityType" placeholder="Disability Type"  >
                         </div>
                     </div>
-    				<div class="form-group">
-                        <label for="signup-inputHeight" class="col-sm-3 col-lg-3 col-md-3 control-label">Height (in cm )</label>
-                        <div class="col-sm-9 col-lg-8 col-md-8">
-                            <input type="number" name="Height" class="form-control" value="<?php if($Height)echo $Height ; ?>" id="signup-inputHeight" placeholder="175"  >
-                        </div>
-                    </div>
+					
+					
+					
+					
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
     				<div class="form-group">
@@ -121,16 +132,17 @@
                             <input required type="text" name="MotherOccupation" class="form-control" value="<?php if($MotherOccupation)echo $MotherOccupation ; ?>" id="signup-inputMotherOccupation" placeholder="Mother's Occupation"  >
                         </div>
                     </div>
-    				<div class="form-group">
-                        <label for="signup-inputDisabilityType" class="col-sm-3 col-lg-3 col-md-3 control-label">Disability Type</label>
+    				
+					
+					<div class="form-group">
+                        <label for="signup-inputHeight" class="col-sm-3 col-lg-3 col-md-3 control-label">Height (in cm )</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
-    						<select class="form-control"  name="DisabilityType" id="signup-inputDisabilityType">		
-							 <option value="NO">NO</option>
-							 <option value="YES">YES</option>
-							</select>
-	                </div>
-					<br />
-                    <div class="form-group">
+                            <input type="number" name="Height" class="form-control" value="<?php if($Height)echo $Height ; ?>" id="signup-inputHeight" placeholder="175"  >
+                        </div>
+                    </div>
+					
+					
+					<div class="form-group">
                         <label for="signup-inputGender" class="col-sm-3 col-lg-3 col-md-3 control-label">Gender</label>
                         <div class="col-sm-9 col-lg-8 col-md-8">
                             <select name="Gender" class="form-control" value="<?php if($Gender)echo $Gender ; ?>" id="signup-inputGender">

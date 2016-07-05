@@ -39,8 +39,8 @@
     			<td><strong> Gender : <?php if($personal_info)echo $personal_info->Gender ?></strong> </td>
     		</tr>
     		<tr>
-    			<td><strong> Reg No. : <?php if($educational_info)echo $educational_info->RegNo ?> </strong>  </td>
-    			<td><strong> Course : <?php if($personal_info)echo $personal_info->Gender ?></strong>  </td>
+    			<td><strong> Reg No. : <?php if($educational_info)echo $educational_info->StudentID ?> </strong>  </td>
+    			<td><strong> Course : <?php if($personal_info)echo '' ?></strong>  </td>
     		</tr>
     	</table>
     	<table border="3"  class="table-hover table-condensed table table-bordered">
@@ -106,7 +106,7 @@
     			<td><strong> Gender : <?php if($personal_info)echo $personal_info->Gender ?></strong> </td>
     		</tr>
     		<tr>
-    			<td><strong> Reg No. : <?php if($educational_info)echo $educational_info->RegNo ?> </strong>  </td>
+    			<td><strong> Reg No. : <?php if($educational_info)echo $educational_info->StudentID ?> </strong>  </td>
     			<td><strong> Course : <?php if($personal_info)echo $personal_info->Gender ?></strong>  </td>
     		</tr>
     	</table>
@@ -174,7 +174,7 @@
     			<td><strong> Gender : <?php if($personal_info)echo $personal_info->Gender ?></strong> </td>
     		</tr>
     		<tr>
-    			<td><strong> Reg No. : <?php if($educational_info)echo $educational_info->RegNo ?> </strong>  </td>
+    			<td><strong> Reg No. : <?php if($educational_info)echo $educational_info->StudentID ?> </strong>  </td>
     			<td><strong> Course : <?php if($personal_info)echo $personal_info->Gender ?></strong>  </td>
     		</tr>
     	</table>
@@ -240,4 +240,4 @@
             <br><br>
         </div>
     </div>
-	<script>window.print()</script>
+	<script>//window.print()</script>

@@ -82,8 +82,15 @@
 				<div class="form-group">
                     <label for="signup-inputAdmissionBatch" class="col-sm-3 col-lg-3 col-md-3 control-label">Admission Batch</label>
                     <div class="col-sm-9 col-lg-8 col-md-8">
-                        <input type="number" name="AdmissionBatch" class="form-control" id="signup-inputAdmissionBatch" placeholder="2016" value="<?php if($AdmissionBatch)echo $AdmissionBatch; ?>">
-                    </div>
+					    <select class="form-control" name="AdmissionBatch" class="form-control" id="signup-inputAdmissionBatch"  value="<?php if($AdmissionBatch)echo $AdmissionBatch; ?>">		
+						 <option value="2013" >2013</option>
+						 <option value="2014" >2014</option>
+						 <option value="2015" >2015</option>
+						 <option value="2016" >2016</option>
+						</select>
+					</div>
+					
+					
                 </div>
 
                 <div class="form-group">
